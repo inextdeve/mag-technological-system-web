@@ -7,12 +7,19 @@ import { SearchIcon } from "../icons/searchicon";
 import { BurguerButton } from "./burguer-button";
 import { NotificationsDropdown } from "./notifications-dropdown";
 import { UserDropdown } from "./user-dropdown";
+import Logo from "../logo";
+import FullscreenButton from "./fullscreen-button";
+import TabsMenu from "./tabs";
 
 interface Props {
   children: React.ReactNode;
+  tabs?: tab[];
 }
 
-export const NavbarWrapper = ({ children }: Props) => {
+export const NavbarWrapper = ({
+  children,
+  tabs = [{ name: "s", link: "s" }],
+}: Props) => {
   return (
     <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
       <Navbar
@@ -22,14 +29,21 @@ export const NavbarWrapper = ({ children }: Props) => {
           wrapper: "w-full max-w-full",
         }}
       >
-        <NavbarContent className="md:hidden">
+        {/* <NavbarContent className="md:hidden">
           <BurguerButton />
+        </NavbarContent> */}
+        <NavbarContent justify="end">
+          <TabsMenu />
         </NavbarContent>
-        <NavbarContent className="w-full max-md:hidden">
+
+        <NavbarContent justify="end">
+          <FullscreenButton />
+        </NavbarContent>
+        <NavbarContent className="max-w-fit max-md:hidden" justify="end">
           <Input
             startContent={<SearchIcon />}
             isClearable
-            className="w-full"
+            className="max-w-[220px]"
             classNames={{
               input: "w-full",
               mainWrapper: "w-full",
@@ -37,7 +51,10 @@ export const NavbarWrapper = ({ children }: Props) => {
             placeholder="Search..."
           />
         </NavbarContent>
-        <NavbarContent
+        <NavbarContent justify="end" className="max-w-fit">
+          <Logo />
+        </NavbarContent>
+        {/* <NavbarContent
           justify="end"
           className="w-fit data-[justify=end]:flex-grow-0"
         >
@@ -61,7 +78,7 @@ export const NavbarWrapper = ({ children }: Props) => {
           <NavbarContent>
             <UserDropdown />
           </NavbarContent>
-        </NavbarContent>
+        </NavbarContent> */}
       </Navbar>
       {children}
     </div>
