@@ -20,9 +20,10 @@ export interface tab {
 const TabsMenu = () => {
   const pathname = usePathname();
 
-  const [tabs, setTabs] = useState<tab[]>();
+  const [tabs, setTabs] = useState<tab[]>(menu.equipment);
 
   useEffect(() => {
+    console.log(pathname);
     switch (pathname) {
       case "/equipment":
         setTabs(menu.equipment);

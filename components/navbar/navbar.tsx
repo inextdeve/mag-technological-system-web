@@ -13,13 +13,9 @@ import TabsMenu from "./tabs";
 
 interface Props {
   children: React.ReactNode;
-  tabs?: tab[];
 }
 
-export const NavbarWrapper = ({
-  children,
-  tabs = [{ name: "s", link: "s" }],
-}: Props) => {
+export const NavbarWrapper = ({ children }: Props) => {
   return (
     <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
       <Navbar

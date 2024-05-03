@@ -1,5 +1,7 @@
+import Equipment from "@/components/equipment";
+
 const Page = () => {
-  return "Equipment";
+  return <Equipment />;
 };
 
 export default Page;

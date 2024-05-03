@@ -1,4 +1,4 @@
-import { LogoIcon, MagIcon, NECIcon } from "./icons/corporate/corporate";
+import { LogoIcon, NECIcon } from "./icons/corporate/corporate";
 
 const Logo = () => {
   return (

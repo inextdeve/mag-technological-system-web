@@ -1,5 +1,5 @@
 import {
-  CopIcon,
+  LogoIcon,
   MagIcon,
   NECIcon,
 } from "@/components/icons/corporate/corporate";
@@ -20,7 +20,7 @@ export default function RootLayout({
           <NECIcon />
         </div>
         <div>
-          <CopIcon />
+          <LogoIcon />
         </div>
       </footer>
     </div>
