@@ -40,3 +40,12 @@ body {
 .elipsise-container {
   perspective: 200px;
 }
+
+.spread-shadow {
+  box-shadow: 0px 0px 41px #CFF80B, 40px 7px 41px #CFF80B, -40px 7px 41px #CFF80B;
+}
+.vehicle-filter {
+  filter: blur(1px) brightness(158%) hue-rotate(220deg) saturate(207%) opacity(30%) contrast(115%);
+-webkit-filter: blur(1px) brightness(158%) hue-rotate(220deg) saturate(207%) opacity(30%) contrast(115%);
+-moz-filter: blur(1px) brightness(158%) hue-rotate(220deg) saturate(207%) opacity(30%) contrast(115%);
+}

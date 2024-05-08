@@ -1,6 +1,16 @@
 import { Button, Switch } from "@nextui-org/react";
 import { cn } from "@/helpers/utils";
-import { Lock, ShieldAlert, Unlock } from "lucide-react";
+import {
+  Lock,
+  MessageSquareMore,
+  PhoneCall,
+  ShieldAlert,
+  Unlock,
+  Voicemail,
+} from "lucide-react";
+import Image from "next/image";
+import AudiBackPng from "@/resources/images/png/audi_back.png";
+import AudiFrontPng from "@/resources/images/png/audi_front.png";
 
 const VehicleControl = () => {
   return (
@@ -28,7 +38,30 @@ const VehicleControl = () => {
         </div>
       </Switch>
       <div className="vehicle">
-        <div className="elipsise-container pt-4 relative">
+        <div className="audi">
+          <div className="relative w-full flex justify-center translate-y-11">
+            <Image
+              src={AudiFrontPng}
+              // fill={true}
+              alt="audi-front"
+              width={312}
+              height={408}
+              className="w-[18%] vehicle-filter"
+            />
+          </div>
+          <div className="relative w-full flex justify-center">
+            <Image
+              src={AudiBackPng}
+              // fill={true}
+              alt="audi-back"
+              width={728}
+              height={455}
+              className="w-[50%]"
+            />
+            <div className="green-light absolute w-[20%] rounded-[100%] h-[20%] top-[40%] -translate-x-[50%] left-[50%] bg-[#CFF80B] spread-shadow -z-10"></div>
+          </div>
+        </div>
+        <div className="elipsise-container pt-4 relative flex justify-center -translate-y-16">
           <div className="w-[80%] h-20 bg-gradient-to-b to-[#87888C] from-[#373838] rounded-[50%] absolute top-[3px] p-[3px] z-20 shadow-md shadow-[#CFF80B]">
             <div className="w-[100%] h-[100%] bg-black rounded-[50%]"></div>
           </div>
@@ -54,6 +87,32 @@ const VehicleControl = () => {
               <Unlock className="w-4 h-4" />
             </Button>
           </div>
+        </div>
+        <div className="flex justify-center gap-4 mt-10">
+          <Button
+            size="sm"
+            isIconOnly={true}
+            radius="full"
+            className="bg-[#606060]"
+          >
+            <PhoneCall className="w-4 h-4" />
+          </Button>
+          <Button
+            size="sm"
+            isIconOnly={true}
+            radius="full"
+            className="bg-[#606060]"
+          >
+            <MessageSquareMore className="w-4 h-4" />
+          </Button>
+          <Button
+            size="sm"
+            isIconOnly={true}
+            radius="full"
+            className="bg-[#606060]"
+          >
+            <Voicemail className="w-4 h-4" />
+          </Button>
         </div>
       </div>
     </div>
