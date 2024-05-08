@@ -1,7 +1,8 @@
 "use client";
 import { usePathname } from "next/navigation";
-import { Tabs, Tab } from "@nextui-org/react";
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { cn } from "@/helpers/utils";
 
 const menu = {
   equipment: [
@@ -20,35 +21,28 @@ export interface tab {
 const TabsMenu = () => {
   const pathname = usePathname();
 
-  const [tabs, setTabs] = useState<tab[]>(menu.equipment);
+  const [tabs, setTabs] = useState<tab[]>([]);
 
   useEffect(() => {
-    console.log(pathname);
-    switch (pathname) {
-      case "/equipment":
-        setTabs(menu.equipment);
-        break;
-
-      default:
-        setTabs([]);
-        break;
-    }
+    if (pathname.indexOf("equipment") > -1) setTabs(menu.equipment);
   }, [pathname]);
 
   return (
-    <Tabs
-      variant="light"
-      aria-label="Tabs variants"
-      classNames={{
-        cursor: "group-data-[selected=true]:bg-[#06b6d425]",
-        tabContent: "group-data-[selected=true]:text-[#06b6d4]",
-      }}
-      selectedKey={pathname}
-    >
+    <div className="flex gap-2">
       {tabs?.map(({ name, link }) => (
-        <Tab key={link} title={name} href={link} />
+        <Link
+          key={link}
+          title={name}
+          href={link}
+          className={cn("text-sm p-1 px-3 rounded-md font-medium", {
+            "text-[#06b6d4] bg-[#06b6d425]":
+              pathname.indexOf(link) > -1 && pathname.length == link.length,
+          })}
+        >
+          {name}
+        </Link>
       ))}
-    </Tabs>
+    </div>
   );
 };
 

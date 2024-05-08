@@ -1,8 +1,10 @@
 "use client";
 import * as React from "react";
+import { Provider } from "react-redux";
 import { NextUIProvider } from "@nextui-org/system";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { ThemeProviderProps } from "next-themes/dist/types";
+import store from "@/store";
 
 export interface ProvidersProps {
   children: React.ReactNode;
@@ -17,7 +19,7 @@ export function Providers({ children, themeProps }: ProvidersProps) {
         attribute="class"
         {...themeProps}
       >
-        {children}
+        <Provider store={store}>{children}</Provider>
       </NextThemesProvider>
     </NextUIProvider>
   );

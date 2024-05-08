@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   Table,
   TableHeader,
@@ -22,8 +22,6 @@ import {
   Tabs,
   Tab,
 } from "@nextui-org/react";
-import { PlusIcon } from "lucide-react";
-import { EllipsisVertical as VerticalDotsIcon } from "lucide-react";
 import { ChevronDownIcon } from "lucide-react";
 import { SearchIcon } from "lucide-react";
 import { columns, users, statusOptions } from "./data";
@@ -41,10 +39,6 @@ type User = (typeof users)[0];
 
 export default function EquipmentTable() {
   const [filterValue, setFilterValue] = React.useState("");
-  const [selectedKeys, setSelectedKeys] = React.useState<Selection>(
-    new Set([])
-  );
-
   const [visibleColumns, setVisibleColumns] = React.useState<Selection>(
     new Set(INITIAL_VISIBLE_COLUMNS)
   );
@@ -174,7 +168,9 @@ export default function EquipmentTable() {
             <Tabs
               variant="light"
               aria-label="Tabs variants"
-              classNames={{ cursor: "group-data-[focus=true]:bg-inherit" }}
+              classNames={{
+                cursor: "group-data-[selected=true]:bg-inherit",
+              }}
               onSelectionChange={(v) => {
                 let values = [];
                 if (v == "all") {
@@ -188,7 +184,7 @@ export default function EquipmentTable() {
               <Tab
                 key="active"
                 title="Active"
-                className="data-[selected=true]:bg-green-600"
+                className="data-[selected=true]:bg-green-600 data-[disabled=true]:bg-green-600"
               />
               <Tab
                 key="paused"
@@ -281,7 +277,7 @@ export default function EquipmentTable() {
         </div>
         <div className="flex justify-between items-center">
           <span className="text-default-400 text-small">
-            Total {users.length} users
+            Total {users.length} equipments
           </span>
           <label className="flex items-center text-default-400 text-small">
             Rows per page:
@@ -322,14 +318,9 @@ export default function EquipmentTable() {
           variant="light"
           onChange={setPage}
         />
-        <span className="text-small text-default-400">
-          {selectedKeys === "all"
-            ? "All items selected"
-            : `${selectedKeys.size} of ${items.length} selected`}
-        </span>
       </div>
     );
-  }, [selectedKeys, items.length, page, pages, hasSearchFilter]);
+  }, [items.length, page, pages, hasSearchFilter]);
 
   const classNames = React.useMemo(
     () => ({
