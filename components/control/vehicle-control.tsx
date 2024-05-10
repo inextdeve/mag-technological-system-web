@@ -11,6 +11,7 @@ import {
 import Image from "next/image";
 import AudiBackPng from "@/resources/images/png/audi_back.png";
 import AudiFrontPng from "@/resources/images/png/audi_front.png";
+import SpeedoMeter from "./speedometer";
 
 const VehicleControl = () => {
   return (
@@ -88,33 +89,34 @@ const VehicleControl = () => {
             </Button>
           </div>
         </div>
-        <div className="flex justify-center gap-4 mt-10">
-          <Button
-            size="sm"
-            isIconOnly={true}
-            radius="full"
-            className="bg-[#606060]"
-          >
-            <PhoneCall className="w-4 h-4" />
-          </Button>
-          <Button
-            size="sm"
-            isIconOnly={true}
-            radius="full"
-            className="bg-[#606060]"
-          >
-            <MessageSquareMore className="w-4 h-4" />
-          </Button>
-          <Button
-            size="sm"
-            isIconOnly={true}
-            radius="full"
-            className="bg-[#606060]"
-          >
-            <Voicemail className="w-4 h-4" />
-          </Button>
-        </div>
       </div>
+      <div className="flex justify-center gap-4 mt-10">
+        <Button
+          size="sm"
+          isIconOnly={true}
+          radius="full"
+          className="bg-[#606060]"
+        >
+          <PhoneCall className="w-4 h-4" />
+        </Button>
+        <Button
+          size="sm"
+          isIconOnly={true}
+          radius="full"
+          className="bg-[#606060]"
+        >
+          <MessageSquareMore className="w-4 h-4" />
+        </Button>
+        <Button
+          size="sm"
+          isIconOnly={true}
+          radius="full"
+          className="bg-[#606060]"
+        >
+          <Voicemail className="w-4 h-4" />
+        </Button>
+      </div>
+      <SpeedoMeter />
     </div>
   );
 };
