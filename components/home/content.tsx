@@ -1,16 +1,17 @@
 "use client";
 import React from "react";
 import dynamic from "next/dynamic";
-import { TableWrapper } from "../table/table";
 import { CardFinance1 } from "./financial-sum/card-finance1";
 import { CardFinance2 } from "./financial-sum/card-finance2";
 import { CardFinance3 } from "./financial-sum/card-finance3";
 import { CardFinance4 } from "./financial-sum/card-finance4";
-import { CardAgents } from "./card-agents";
 import { CardTransactions } from "./card-transactions";
-import { Link } from "@nextui-org/react";
-import NextLink from "next/link";
 import Equipment from "./equipment";
+import ZonesMap from "./zones-map";
+import Quality from "./quality";
+import Safety from "./Safety";
+import Employment from "./employment";
+import ButtonLink from "../button-link";
 
 const Chart = dynamic(
   () => import("../charts/steam").then((mod) => mod.Steam),
@@ -27,34 +28,41 @@ export const Content = () => (
         <h3 className="text-xl font-semibold text-[#F29701]">Equipment</h3>
         <div className="flex flex-col justify-center gap-4 flex-wrap md:flex-nowrap md:flex-col">
           <Equipment />
-          {/* <CardTransactions /> */}
+        </div>
+        <h3 className="text-xl font-semibold text-[#F29701]">Map</h3>
+        <div className="flex flex-col justify-center gap-4 flex-wrap md:flex-nowrap md:flex-col">
+          {/* <ZonesMap /> */}
         </div>
       </div>
       {/* Left Section */}
       <div className="gap-2 flex flex-col ">
         <h3 className="text-xl font-semibold text-[#F29701]">Employment</h3>
         <div className="flex flex-col justify-center gap-4 flex-wrap md:flex-nowrap md:flex-col">
-          <Equipment />
-          <CardTransactions />
+          <Employment />
+        </div>
+        <h3 className="text-xl font-semibold text-[#F29701]">Quality</h3>
+        <div className="flex flex-col justify-center gap-4 flex-wrap md:flex-nowrap md:flex-col">
+          <Quality />
+        </div>
+        <h3 className="text-xl font-semibold text-[#F29701]">Safety</h3>
+        <div className="flex flex-col justify-center gap-4 flex-wrap md:flex-nowrap md:flex-col">
+          <Safety />
         </div>
       </div>
+
       {/* Financial Summaries */}
       <div className="flex flex-col gap-2">
         <h3 className="text-xl font-semibold text-[#F29701]">
           Financial Summaries
         </h3>
-        <div className="grid gap-4 w-full">
+        <div className="grid gap-12 w-full">
           <CardFinance1 />
           <CardFinance2 />
           <CardFinance3 />
           <CardFinance4 />
-        </div>
-      </div>
-      {/* Chart */}
-      <div className="h-full flex flex-col gap-2">
-        <h3 className="text-xl font-semibold">Statistics</h3>
-        <div className="w-full bg-default-50 shadow-lg rounded-2xl p-6 ">
-          <Chart />
+          <div className="xl:max-w-sm flex justify-center">
+            <ButtonLink href="/">Details</ButtonLink>
+          </div>
         </div>
       </div>
     </div>

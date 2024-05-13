@@ -19,7 +19,7 @@ import { FilterIcon } from "../icons/sidebar/filter-icon";
 import { useSidebarContext } from "../layout/layout-context";
 import { ChangeLogIcon } from "../icons/sidebar/changelog-icon";
 import { usePathname } from "next/navigation";
-import { Truck } from "lucide-react";
+import { Cpu, LineChart, ShieldCheck, Sparkles, Truck } from "lucide-react";
 
 export const SidebarWrapper = () => {
   const pathname = usePathname();
@@ -47,23 +47,23 @@ export const SidebarWrapper = () => {
               href="/"
             />
             <SidebarMenu title="Main Menu">
-              <SidebarItem
+              {/* <SidebarItem
                 isActive={pathname === "/accounts"}
                 title="Accounts"
                 icon={<AccountsIcon />}
                 href="accounts"
-              />
+              /> */}
               <SidebarItem
                 isActive={pathname.indexOf("/equipment") > -1}
                 title="Equipment"
-                icon={<Truck />}
+                icon={<Truck className="text-default-400" />}
                 href="/equipment"
               />
-              <CollapseItems
+              {/* <CollapseItems
                 icon={<BalanceIcon />}
                 items={["Banks Accounts", "Credit Cards", "Loans"]}
                 title="Balances"
-              />
+              /> */}
               <SidebarItem
                 isActive={pathname.indexOf("/employment") > -1}
                 title="Employment"
@@ -71,40 +71,29 @@ export const SidebarWrapper = () => {
                 href="/employment"
               />
               <SidebarItem
-                isActive={pathname === "/products"}
-                title="Products"
-                icon={<ProductsIcon />}
+                isActive={pathname === "/processes"}
+                title="Processes"
+                icon={<Cpu className="text-default-400" />}
               />
               <SidebarItem
-                isActive={pathname === "/reports"}
-                title="Reports"
-                icon={<ReportsIcon />}
-              />
-            </SidebarMenu>
-
-            <SidebarMenu title="General">
-              <SidebarItem
-                isActive={pathname === "/developers"}
-                title="Developers"
-                icon={<DevIcon />}
+                isActive={pathname === "/financial-sum"}
+                title="Financial Summaries"
+                icon={<LineChart className="text-default-400" />}
               />
               <SidebarItem
-                isActive={pathname === "/view"}
-                title="View Test Data"
-                icon={<ViewIcon />}
+                isActive={pathname === "/quality-mngt"}
+                title="Quality Management"
+                icon={<Sparkles className="text-default-400" />}
+              />
+              <SidebarItem
+                isActive={pathname === "/safety-mngt"}
+                title="Safety Management"
+                icon={<ShieldCheck className="text-default-400" />}
               />
               <SidebarItem
                 isActive={pathname === "/settings"}
                 title="Settings"
                 icon={<SettingsIcon />}
-              />
-            </SidebarMenu>
-
-            <SidebarMenu title="Updates">
-              <SidebarItem
-                isActive={pathname === "/changelog"}
-                title="Changelog"
-                icon={<ChangeLogIcon />}
               />
             </SidebarMenu>
           </div>
