@@ -30,6 +30,8 @@
     "react-d3-speedometer": "^2.2.1",
     "react-dom": "18.2.0",
     "react-redux": "^9.1.0",
+    "react-speedometer": "^0.1.2",
+    "recharts": "^2.12.7",
     "redux": "^5.0.1",
     "tailwind-merge": "^2.3.0",
     "wellknown": "^0.5.0"

@@ -1,4 +1,4 @@
-import Control from "@/components/control";
+import Control from "@/components/equipment/control";
 
 const Page = () => {
   return <Control />;

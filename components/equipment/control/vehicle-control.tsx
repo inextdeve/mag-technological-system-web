@@ -12,10 +12,11 @@ import Image from "next/image";
 import AudiBackPng from "@/resources/images/png/audi_back.png";
 import AudiFrontPng from "@/resources/images/png/audi_front.png";
 import SpeedoMeter from "./speedometer";
+import Locker from "./locker";
 
 const VehicleControl = () => {
   return (
-    <div className="grid">
+    <div className="grid max-w-[425px]">
       <Switch
         color="danger"
         classNames={{
@@ -70,24 +71,7 @@ const VehicleControl = () => {
             <div className="w-[100%] h-[100%] bg-gradient-to-r from-[#CFF80B] to-[#CFF80B] rounded-[50%]"></div>
           </div>
           {/* Lock/Unlock button */}
-          <div className="absolute z-30 w-[80%] flex justify-around top-[50%]">
-            <Button
-              size="sm"
-              isIconOnly={true}
-              radius="full"
-              className="bg-[#606060]"
-            >
-              <Lock className="w-4 h-4" />
-            </Button>
-            <Button
-              size="sm"
-              isIconOnly={true}
-              radius="full"
-              className="bg-[#606060]"
-            >
-              <Unlock className="w-4 h-4" />
-            </Button>
-          </div>
+          <Locker />
         </div>
       </div>
       <div className="flex justify-center gap-4 mt-10">

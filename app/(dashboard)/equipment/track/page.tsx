@@ -1,4 +1,4 @@
-import Track from "@/components/track";
+import Track from "@/components/equipment/track";
 
 const Page = () => {
   return <Track />;
