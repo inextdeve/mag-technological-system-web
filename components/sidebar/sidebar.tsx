@@ -76,9 +76,10 @@ export const SidebarWrapper = () => {
                 icon={<Cpu className="text-default-400" />}
               />
               <SidebarItem
-                isActive={pathname === "/financial-sum"}
+                isActive={pathname === "/financial"}
                 title="Financial Summaries"
                 icon={<LineChart className="text-default-400" />}
+                href="/financial"
               />
               <SidebarItem
                 isActive={pathname === "/quality-mngt"}
