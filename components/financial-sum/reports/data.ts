@@ -1,0 +1,32 @@
+export const data = [
+  {
+    id: 1,
+    name: "Mustafa Alfouzan",
+    from: "Sat, 20 Apr 2023",
+    to: "Mon, 22 Apr 2023",
+    totalPrice: "SR 125,878",
+    totalFines: "SR 125,878",
+    totalRemaining: "SR 125,878",
+    status: "Completed",
+  },
+  {
+    id: 1,
+    name: "Ahmed Mansour",
+    from: "Sat, 20 Apr 2023",
+    to: "Mon, 22 Apr 2023",
+    totalPrice: "SR 125,878",
+    totalFines: "SR 125,878",
+    totalRemaining: "SR 125,878",
+    status: "Completed",
+  },
+  {
+    id: 1,
+    name: "Yassir",
+    from: "Sat, 20 Apr 2023",
+    to: "Mon, 22 Apr 2023",
+    totalPrice: "SR 125,878",
+    totalFines: "SR 125,878",
+    totalRemaining: "SR 125,878",
+    status: "Processes",
+  },
+];

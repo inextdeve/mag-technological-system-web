@@ -44,7 +44,7 @@ const Transactions = () => {
           </TableHeader>
           <TableBody>
             <TableRow key="1">
-              <TableCell>Mustakhlas 1</TableCell>
+              <TableCell colSpan={2}>Mustakhlas 1</TableCell>
               <TableCell>Sat, 20 Apr 2024</TableCell>
               <TableCell className="text-[#0AB9BF]">SR 125,545</TableCell>
               <TableCell>

@@ -18,10 +18,20 @@ module.exports = {
   darkMode: "class",
   plugins: [nextui({
     themes: {
-      
+      extends: {
+        colors: {
+          "yellow-m": "#F29701",
+          "green-m": '#00AE4E',
+          "x-light-yellow-m": "#FFF4E2"
+        }
+      },
       dark: {
         colors: {
-          background: "#010C20"
+          background: "#010C20",
+          "yellow-m": "#F29701",
+          "green-m": '#00AE4E',
+          "x-light-green-m": "#E5FFF1",
+          "x-light-yellow-m": "#FFF4E2"
 
         },
       },

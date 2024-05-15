@@ -11,6 +11,11 @@ const menu = {
     { name: "Control", link: "/equipment/control" },
     { name: "Reports", link: "/equipment/reports" },
   ],
+  financial: [
+    { name: "Summary", link: "/financial" },
+    { name: "Reports", link: "/financial/reports" },
+    { name: "Details", link: "/financial/details" },
+  ],
 };
 
 export interface tab {
@@ -25,6 +30,8 @@ const TabsMenu = () => {
 
   useEffect(() => {
     if (pathname.indexOf("equipment") > -1) setTabs(menu.equipment);
+    else if (pathname.indexOf("financial") > -1) setTabs(menu.financial);
+    else setTabs([]);
   }, [pathname]);
 
   return (
