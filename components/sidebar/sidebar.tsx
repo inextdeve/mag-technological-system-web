@@ -29,6 +29,11 @@ export const SidebarWrapper = () => {
         <div className={Sidebar.Header()}>
           <CompaniesDropdown />
         </div>
+        <h4 className="text-2xl font-semibold pl-3">
+          Technological
+          <br />
+          <span className="text-yellow-m">System</span>
+        </h4>
         <div className="flex flex-col justify-between h-full">
           <div className={Sidebar.Body()}>
             <SidebarItem
@@ -89,6 +94,7 @@ export const SidebarWrapper = () => {
                 isActive={pathname === "/settings"}
                 title="Settings"
                 icon={<SettingsIcon />}
+                href="/settings"
               />
             </SidebarMenu>
           </div>

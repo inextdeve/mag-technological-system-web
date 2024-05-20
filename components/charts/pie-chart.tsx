@@ -49,7 +49,9 @@ interface CustomPieChartProps {
 const Info = () => {
   return (
     <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-fit text-center">
-      <h2 className="font-bold text-2xl text-white z-[100]">4,547</h2>
+      <h2 className="font-bold text-2xl dark:text-white z-[100] text-gray-600">
+        4,547
+      </h2>
       <p className="text-xs font-semibold text-gray-400">Total</p>
     </div>
   );

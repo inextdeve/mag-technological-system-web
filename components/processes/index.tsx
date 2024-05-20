@@ -1,5 +1,6 @@
 import Map from "./map";
 import TimeTable from "./timetable";
+import ZoneCard from "./zone-card";
 
 const Processes = () => {
   return (
@@ -10,9 +11,11 @@ const Processes = () => {
         </div>
       </div>
       {/* Add content here */}
-      <div className="w-full">
+      <div className="w-[70%] px-4 min-w-300px">
+        <h4 className="text-yellow-m">Timetable</h4>
         <TimeTable />
       </div>
+      <ZoneCard />
     </div>
   );
 };
