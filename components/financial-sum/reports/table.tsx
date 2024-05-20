@@ -1,8 +1,8 @@
 "use client";
 import { ReactNode, useState } from "react";
 import { data } from "./data";
-import { Button, Chip, TableCell, TableCellProps } from "@nextui-org/react";
-import { ArrowDown } from "lucide-react";
+import { Button, Chip, TableCellProps } from "@nextui-org/react";
+import { ArrowDown, ChevronRight } from "lucide-react";
 import CustomSlider from "./slider";
 import { cn } from "@/helpers/utils";
 
@@ -59,21 +59,16 @@ const TableData = (props: TableCellProps) => {
 };
 
 export default function CollapsibleTable() {
-  const [expandedRows, setExpandedRows] = useState(null);
-
-  const [expanded, setExpanded] = useState(false);
+  const [expandedRows, setExpandedRows] = useState([]);
 
   // expand table row
-  const handleExpandRow = (userId) => {
-    let currentExpandedRows = null;
-    const isRowExpanded = currentExpandedRows === userId ? userId : null;
-    const newExpandedRows = isRowExpanded
-      ? null
-      : (currentExpandedRows = userId);
-    if (expandedRows !== userId) {
-      setExpandedRows(newExpandedRows);
+  const handleExpandRow = (index: number) => {
+    const isRowExpanded = expandedRows.includes(index as never);
+
+    if (isRowExpanded) {
+      setExpandedRows((prev) => prev.filter((v) => v != index));
     } else {
-      setExpandedRows(null);
+      setExpandedRows((prev) => prev.concat(index as never));
     }
   };
   return (
@@ -94,16 +89,18 @@ export default function CollapsibleTable() {
         </TableRow>
       </TableHead>
       {data.map((item, index) => (
-        <tbody>
+        <tbody key={index}>
           <TableRow
             key={index}
-            onClick={() => {
-              setExpanded(!expanded);
-            }}
+            onClick={() => handleExpandRow(index)}
             className={cn("hover:cursor-pointer")}
           >
             <TableData>
-              <ArrowDown className="w-4 h-4" />
+              <ChevronRight
+                className={cn("w-4 h-4 transition-transform", {
+                  "rotate-90": expandedRows.includes(index as never),
+                })}
+              />
             </TableData>
             <TableData>{item.name}</TableData>
             <TableData>{item.from}</TableData>
@@ -137,10 +134,10 @@ export default function CollapsibleTable() {
               </Button>
             </TableData>
           </TableRow>
-          {expanded ? (
-            <TableRow>
+          {expandedRows.includes(index as never) ? (
+            <TableRow className="opacity-0 translate-y-[-10px] animate-fadein">
               <TableData colSpan={9} className="collaps-viewer">
-                <div className="bg-[#0AB9BF55] rounded-lg p-2 flex gap-16 p-4">
+                <div className="bg-[#0AB9BF55] rounded-lg flex gap-16 p-4">
                   <CustomSlider />
                   <CustomSlider variant="exchange" />
                 </div>

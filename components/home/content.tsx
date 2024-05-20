@@ -31,7 +31,7 @@ export const Content = () => (
         </div>
         <h3 className="text-xl font-semibold text-[#F29701]">Map</h3>
         <div className="flex flex-col justify-center gap-4 flex-wrap md:flex-nowrap md:flex-col">
-          {/* <ZonesMap /> */}
+          <ZonesMap />
         </div>
       </div>
       {/* Left Section */}

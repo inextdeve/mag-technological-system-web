@@ -13,29 +13,39 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        fadein: {
+          "0%": { opacity: 0, transform: "translateY(-10px)" },
+          "100%": { opacity: 1, transform: "translateY(0)" },
+        },
+      },
+      animation: {
+        fadein: "fadein 0.3s ease-out forwards",
+      },
     },
   },
   darkMode: "class",
-  plugins: [nextui({
-    themes: {
-      extends: {
-        colors: {
-          "yellow-m": "#F29701",
-          "green-m": '#00AE4E',
-          "x-light-yellow-m": "#FFF4E2"
-        }
-      },
-      dark: {
-        colors: {
-          background: "#010C20",
-          "yellow-m": "#F29701",
-          "green-m": '#00AE4E',
-          "x-light-green-m": "#E5FFF1",
-          "x-light-yellow-m": "#FFF4E2"
-
+  plugins: [
+    nextui({
+      themes: {
+        extends: {
+          colors: {
+            "yellow-m": "#F29701",
+            "green-m": "#00AE4E",
+            "x-light-yellow-m": "#FFF4E2",
+          },
         },
+        dark: {
+          colors: {
+            background: "#010C20",
+            "yellow-m": "#F29701",
+            "green-m": "#00AE4E",
+            "x-light-green-m": "#E5FFF1",
+            "x-light-yellow-m": "#FFF4E2",
+          },
+        },
+        // ... custom themes
       },
-      // ... custom themes
-    },
-  })],
+    }),
+  ],
 };

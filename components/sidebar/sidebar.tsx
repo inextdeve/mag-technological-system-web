@@ -3,21 +3,12 @@ import { Sidebar } from "./sidebar.styles";
 import { Avatar, Tooltip } from "@nextui-org/react";
 import { CompaniesDropdown } from "./companies-dropdown";
 import { HomeIcon } from "../icons/sidebar/home-icon";
-import { PaymentsIcon } from "../icons/sidebar/payments-icon";
-import { BalanceIcon } from "../icons/sidebar/balance-icon";
-import { AccountsIcon } from "../icons/sidebar/accounts-icon";
 import { CustomersIcon } from "../icons/sidebar/customers-icon";
-import { ProductsIcon } from "../icons/sidebar/products-icon";
-import { ReportsIcon } from "../icons/sidebar/reports-icon";
-import { DevIcon } from "../icons/sidebar/dev-icon";
-import { ViewIcon } from "../icons/sidebar/view-icon";
 import { SettingsIcon } from "../icons/sidebar/settings-icon";
-import { CollapseItems } from "./collapse-items";
 import { SidebarItem } from "./sidebar-item";
 import { SidebarMenu } from "./sidebar-menu";
 import { FilterIcon } from "../icons/sidebar/filter-icon";
 import { useSidebarContext } from "../layout/layout-context";
-import { ChangeLogIcon } from "../icons/sidebar/changelog-icon";
 import { usePathname } from "next/navigation";
 import { Cpu, LineChart, ShieldCheck, Sparkles, Truck } from "lucide-react";
 
@@ -71,25 +62,28 @@ export const SidebarWrapper = () => {
                 href="/employment"
               />
               <SidebarItem
-                isActive={pathname === "/processes"}
+                isActive={pathname.indexOf("/processes") > -1}
                 title="Processes"
                 icon={<Cpu className="text-default-400" />}
+                href="/processes"
               />
               <SidebarItem
-                isActive={pathname === "/financial"}
+                isActive={pathname.indexOf("/financial") > -1}
                 title="Financial Summaries"
                 icon={<LineChart className="text-default-400" />}
                 href="/financial"
               />
               <SidebarItem
-                isActive={pathname === "/quality-mngt"}
+                isActive={pathname.indexOf("/quality") > -1}
                 title="Quality Management"
                 icon={<Sparkles className="text-default-400" />}
+                href="/quality"
               />
               <SidebarItem
-                isActive={pathname === "/safety-mngt"}
+                isActive={pathname.indexOf("/safety-management") > -1}
                 title="Safety Management"
                 icon={<ShieldCheck className="text-default-400" />}
+                href="safety-management"
               />
               <SidebarItem
                 isActive={pathname === "/settings"}
