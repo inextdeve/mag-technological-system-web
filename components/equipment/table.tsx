@@ -170,6 +170,8 @@ export default function EquipmentTable() {
               aria-label="Tabs variants"
               classNames={{
                 cursor: "group-data-[selected=true]:bg-inherit",
+                tabContent:
+                  "dark:group-data-[selected=true]:text-black group-data-[selected=true]:text-white",
               }}
               onSelectionChange={(v) => {
                 let values = [];
@@ -246,7 +248,7 @@ export default function EquipmentTable() {
                   endContent={<ChevronDownIcon className="text-small" />}
                   size="sm"
                   variant="flat"
-                  className="bg-white text-background"
+                  className="bg-white dark:text-background"
                 >
                   Columns
                 </Button>

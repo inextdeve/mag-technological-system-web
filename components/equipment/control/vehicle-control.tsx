@@ -1,4 +1,4 @@
-import { Button, Switch } from "@nextui-org/react";
+import { Button, Card, CardHeader, Switch } from "@nextui-org/react";
 import { cn } from "@/helpers/utils";
 import {
   Lock,
@@ -16,29 +16,31 @@ import Locker from "./locker";
 
 const VehicleControl = () => {
   return (
-    <div className="grid max-w-[425px]">
-      <Switch
-        color="danger"
-        classNames={{
-          base: cn(
-            "inline-flex flex-row-reverse w-full max-w-md bg-content1 items-center",
-            "justify-between cursor-pointer rounded-lg gap-2 p-2 border-2 border-transparent bg-[#0AB9BF26]",
-            "data-[selected=true]:border-danger"
-          ),
-        }}
-      >
-        <div className="flex items-center gap-3">
-          <div className="bg-[#2B2A2A] w-fit rounded-md p-2">
-            <ShieldAlert className="text-danger" />
+    <Card className="grid dark:bg-transparent">
+      <CardHeader>
+        <Switch
+          color="danger"
+          classNames={{
+            base: cn(
+              "inline-flex flex-row-reverse w-full max-w-md bg-content1 items-center",
+              "justify-between cursor-pointer rounded-lg gap-2 p-2 border-2 border-transparent bg-[#0AB9BF26]",
+              "data-[selected=true]:border-danger"
+            ),
+          }}
+        >
+          <div className="flex items-center gap-3">
+            <div className="bg-[#2B2A2A] w-fit rounded-md p-2">
+              <ShieldAlert className="text-danger" />
+            </div>
+            <div className="flex flex-col">
+              <p className="text-medium">Emergency</p>
+              <p className="text-tiny text-default-400">
+                Switch On only in emergency cases.
+              </p>
+            </div>
           </div>
-          <div className="flex flex-col">
-            <p className="text-medium">Emergency</p>
-            <p className="text-tiny text-default-400">
-              Switch On only in emergency cases.
-            </p>
-          </div>
-        </div>
-      </Switch>
+        </Switch>
+      </CardHeader>
       <div className="vehicle">
         <div className="audi">
           <div className="relative w-full flex justify-center translate-y-11">
@@ -65,7 +67,7 @@ const VehicleControl = () => {
         </div>
         <div className="elipsise-container pt-4 relative flex justify-center -translate-y-16">
           <div className="w-[80%] h-20 bg-gradient-to-b to-[#87888C] from-[#373838] rounded-[50%] absolute top-[3px] p-[3px] z-20 shadow-md shadow-[#CFF80B]">
-            <div className="w-[100%] h-[100%] bg-black rounded-[50%]"></div>
+            <div className="w-[100%] h-[100%] dark:bg-black bg-slate-900 rounded-[50%]"></div>
           </div>
           <div className="w-[80%] h-20 bg-gradient-to-b to-[#87888C] from-[#373838] rounded-[50%] absolute top-2 p-[3px] scale-y-[1.05]">
             <div className="w-[100%] h-[100%] bg-gradient-to-r from-[#CFF80B] to-[#CFF80B] rounded-[50%]"></div>
@@ -101,7 +103,7 @@ const VehicleControl = () => {
         </Button>
       </div>
       <SpeedoMeter />
-    </div>
+    </Card>
   );
 };
 

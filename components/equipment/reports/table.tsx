@@ -278,6 +278,7 @@ export default function ReportsTable() {
         <Pagination
           showControls
           classNames={{
+            wrapper: "dark:bg-transparent bg-white",
             cursor: "bg-yellow-600 text-white",
           }}
           color="default"

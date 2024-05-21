@@ -44,8 +44,12 @@ const TimeRange = ({ setFrom, setTo }: Props) => {
             }}
           />
         </div>
-        <Button className="rounded-md bg-white text-background">Cancel</Button>
-        <Button className="rounded-md bg-yellow-500">Apply</Button>
+        <Button className="rounded-md dark:bg-white text-background">
+          Cancel
+        </Button>
+        <Button className="rounded-md dark:text-black text-white bg-yellow-500">
+          Apply
+        </Button>
       </div>
     </div>
   );

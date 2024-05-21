@@ -15,7 +15,8 @@ module.exports = {
     extend: {
       gridTemplateColumns: {
         // Simple 13 column grid
-        '13': 'repeat(13, minmax(0, 1fr))',},
+        13: "repeat(13, minmax(0, 1fr))",
+      },
       keyframes: {
         fadein: {
           "0%": { opacity: 0, transform: "translateY(-10px)" },
@@ -49,10 +50,9 @@ module.exports = {
         },
         light: {
           colors: {
-            background: "#FFFFFF",
-            
-          }
-        }
+            background: "#f0f2f5",
+          },
+        },
         // ... custom themes
       },
     }),

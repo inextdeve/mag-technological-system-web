@@ -1,6 +1,7 @@
 "use client";
 
-import { Button } from "@nextui-org/react";
+import { Button, Switch } from "@nextui-org/react";
+import { MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
@@ -16,9 +17,23 @@ export function Settings() {
 
   return (
     <div>
-      The current theme is: {theme}
-      <Button onClick={() => setTheme("light")}>Light Mode</Button>
-      <Button onClick={() => setTheme("dark")}>Dark Mode</Button>
+      <Switch
+        onValueChange={(v) => {
+          setTheme(v ? "light" : "dark");
+        }}
+        defaultSelected
+        size="lg"
+        color="primary"
+        thumbIcon={({ isSelected, className }) =>
+          isSelected ? (
+            <SunIcon className={className} />
+          ) : (
+            <MoonIcon className={className} />
+          )
+        }
+      >
+        Dark mode
+      </Switch>
     </div>
   );
 }

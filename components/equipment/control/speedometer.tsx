@@ -1,5 +1,6 @@
 "use client";
 import { BatteryMedium, Fuel } from "lucide-react";
+import { useTheme } from "next-themes";
 import ReactSpeedometer from "react-d3-speedometer";
 import Speedometer, {
   Background,
@@ -10,6 +11,7 @@ import Speedometer, {
 } from "react-speedometer";
 
 const SpeedoMeter = () => {
+  const theme = useTheme();
   return (
     <>
       <div className="flex justify-between mt-6">
@@ -66,7 +68,7 @@ const SpeedoMeter = () => {
       </div>
       <div className="flex justify-center mt-4 -translate-y-16">
         <Speedometer value={57} fontFamily="system-ui">
-          <Background opacity={0} />
+          <Background opacity={theme.theme === "light" ? 0.9 : 0} />
           <Arc color="#87888C" opacity={0.6} />
           <Progress color="#CFF80B" />
           <Marks

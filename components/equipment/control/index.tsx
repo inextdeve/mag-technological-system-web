@@ -5,8 +5,8 @@ import VehicleControl from "./vehicle-control";
 
 const Control = () => {
   return (
-    <div className="grid grid-cols-5 gap-2">
-      <div className="col-span-5 flex gap-10 items-center">
+    <div className="grid grid-cols-5 gap-2 items-stretch">
+      <div className="col-span-5 flex gap-10 items-center mb-6">
         <Input
           placeholder="Equipment code"
           classNames={{ inputWrapper: "bg-[#0AB9BF26]" }}

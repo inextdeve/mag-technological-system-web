@@ -68,7 +68,7 @@ export default function DevicesList({ handleSubmit }: Props) {
               title={device.name}
               classNames={{
                 titleWrapper: "truncate",
-                title: "truncate text-md font-medium",
+                title: "truncate text-md dark:text-gray-300 font-medium",
                 subtitle: `${
                   device.status == "online" ? "text-green-400" : ""
                 }`,

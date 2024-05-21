@@ -13,14 +13,14 @@ const Locker = () => {
         size="sm"
         isIconOnly={true}
         radius="full"
-        className={cn("bg-[#606060]", {
+        className={cn("dark:bg-[#606060]", {
           "bg-[#CFF80B]": lockStatus == "locked",
         })}
         onClick={() => setLockStatus("locked")}
       >
         <Lock
           className={cn("w-4 h-4", {
-            "text-background": lockStatus == "locked",
+            "dark:text-background": lockStatus == "locked",
           })}
         />
       </Button>
@@ -33,7 +33,7 @@ const Locker = () => {
       >
         <Unlock
           className={cn("w-4 h-4", {
-            "text-background": lockStatus == "unlocked",
+            "dark:text-background": lockStatus == "unlocked",
           })}
         />
       </Button>
