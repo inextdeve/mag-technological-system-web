@@ -54,10 +54,10 @@ const TimeTable = () => {
         <div className="col-span-full grid grid-cols-13 ">
           <div className="py-3 text-center text-[#0AB9BF]">{name}</div>
           <div className="col-span-12 py-3 border-b-1 border-white">
-            <div className="min-h-6 bg-[#0AB9BF]/30 w-full rounded-r-full relative">
+            <div className="min-h-6 dark:bg-[#0AB9BF]/30 bg-[#0AB9BF]/50 w-full rounded-r-full relative">
               <div
                 className={cn(
-                  `absolute top-0 bottom-0 bg-gradient-to-r from-[#FFFFFF] to-[#0AB9BF] rounded-full min-h-4`,
+                  `absolute top-0 bottom-0 bg-gradient-to-r dark:from-[#FFFFFF] from-blue-700 to-[#0AB9BF] rounded-full min-h-4`,
                   {
                     "rounded-l-none": start === 0,
                   }

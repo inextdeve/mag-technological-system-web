@@ -155,7 +155,7 @@ export default function SafetyTable() {
                   endContent={<ChevronDownIcon className="text-small" />}
                   size="sm"
                   variant="flat"
-                  className="bg-white text-background"
+                  className="bg-white dark:text-background"
                 >
                   Columns
                 </Button>

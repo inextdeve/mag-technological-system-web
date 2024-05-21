@@ -10,6 +10,7 @@ import { UserDropdown } from "./user-dropdown";
 import Logo from "../logo";
 import FullscreenButton from "./fullscreen-button";
 import TabsMenu from "./tabs";
+import { FullScreenProvider } from "@/app/providers";
 
 interface Props {
   children: React.ReactNode;
@@ -20,7 +21,7 @@ export const NavbarWrapper = ({ children }: Props) => {
     <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
       <Navbar
         isBordered
-        className="w-full"
+        className="w-full bg-white/60 dark:bg-background/60"
         classNames={{
           wrapper: "w-full max-w-full",
         }}

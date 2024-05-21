@@ -51,6 +51,7 @@ module.exports = {
         light: {
           colors: {
             background: "#f0f2f5",
+            "yellow-m": "#F29701",
           },
         },
         // ... custom themes

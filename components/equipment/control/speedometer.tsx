@@ -36,7 +36,7 @@ const SpeedoMeter = () => {
               valueTextFontSize="12px"
               valueTextFontWeight="400"
             />
-            <Fuel className="w-6 h-6 absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[25%]" />
+            <Fuel className="w-6 h-6 absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[25%] dark:text-white text-gray-700" />
           </div>
           <span className="text-xs translate-y-[-10px]">60%</span>
         </div>
@@ -61,7 +61,7 @@ const SpeedoMeter = () => {
               valueTextFontSize="12px"
               valueTextFontWeight="400"
             />
-            <BatteryMedium className="w-6 h-6 absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[25%]" />
+            <BatteryMedium className="w-6 h-6 absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[25%] dark:text-white text-gray-700" />
           </div>
           <span className="text-xs translate-y-[-10px]">50%</span>
         </div>

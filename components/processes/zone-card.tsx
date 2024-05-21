@@ -4,9 +4,10 @@ import Truck1 from "@/resources/images/png/truck2-rm-later.png";
 import Truck2 from "@/resources/images/png/truck-rm-later.png";
 import TomMap from "@/resources/images/png/tomtom-rm-later.png";
 import Image from "next/image";
+import GlassCard from "../glassmorphism/glass-card";
 const ZoneCard = () => {
   return (
-    <div className="w-[28%] absolute bottom-4 right-4 border-1 border-white rounded-lg p-6 bg-background/2">
+    <GlassCard className="w-[28%] absolute bottom-4 right-4 border-1 border-white rounded-lg p-6">
       <div className="flex gap-2 items-center my-1">
         <span className="w-fit text-nowrap">Zone 04 </span>
         <Progress size="lg" aria-label="Loading..." value={50} />
@@ -69,7 +70,7 @@ const ZoneCard = () => {
           <span className="text-yellow-m">11</span>
         </li>
       </ul>
-    </div>
+    </GlassCard>
   );
 };
 

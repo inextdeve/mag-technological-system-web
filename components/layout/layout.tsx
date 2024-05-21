@@ -3,6 +3,7 @@ import { useLockedBody } from "../hooks/useBodyLock";
 import { NavbarWrapper } from "../navbar/navbar";
 import { SidebarWrapper } from "../sidebar/sidebar";
 import { SidebarContext } from "./layout-context";
+import { FullScreenProvider } from "@/app/providers";
 
 interface Props {
   children: React.ReactNode;
@@ -25,6 +26,7 @@ export const Layout = ({ children }: Props) => {
     >
       <section className="flex">
         <SidebarWrapper />
+
         <NavbarWrapper>{children}</NavbarWrapper>
       </section>
     </SidebarContext.Provider>
