@@ -146,8 +146,11 @@ const ZoneCarousel = () => {
       swipeable
       transitionDuration={10500}
     >
-      {data.map(({ name, value }) => (
-        <div className="flex gap-1 items-center font-semibold">
+      {data.map(({ name, value }, index) => (
+        <div
+          key={`${name}-${index}`}
+          className="flex gap-1 items-center font-semibold"
+        >
           <p>{name}</p>
           <span>
             {value > 500 ? (

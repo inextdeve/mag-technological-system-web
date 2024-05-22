@@ -48,10 +48,13 @@ const TimeTable = () => {
   return (
     <div className="grid grid-cols-13 p-1">
       {monthsShort.map((value) => (
-        <div>{value}</div>
+        <div key={value}>{value}</div>
       ))}
-      {data.map(({ name, start, end }) => (
-        <div className="col-span-full grid grid-cols-13 ">
+      {data.map(({ name, start, end }, index) => (
+        <div
+          key={`${name}-${index}`}
+          className="col-span-full grid grid-cols-13 "
+        >
           <div className="py-3 text-center text-[#0AB9BF]">{name}</div>
           <div className="col-span-12 py-3 border-b-1 border-white">
             <div className="min-h-6 dark:bg-[#0AB9BF]/30 bg-[#0AB9BF]/50 w-full rounded-r-full relative">

@@ -46,7 +46,7 @@ const TimeRange = ({ setFrom, setTo }: Props) => {
         </div>
         <Select className="min-w-[150px] max-w-fit" placeholder="Zones">
           <SelectItem key="zone-1" value="zone-1">
-            "Zone 1"
+            Zone 1
           </SelectItem>
         </Select>
         <Button className="rounded-md bg-white text-background">Cancel</Button>

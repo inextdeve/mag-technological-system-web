@@ -12,7 +12,7 @@ export interface ProvidersProps {
   themeProps?: ThemeProviderProps;
 }
 
-const FullScreenContext = React.createContext();
+const FullScreenContext = React.createContext({});
 
 export const FullScreenProvider = ({
   children,
@@ -24,7 +24,7 @@ export const FullScreenProvider = ({
   const [isFullScreen, setIsFullScreen] = React.useState(handleScreen.active);
 
   const reportChange = React.useCallback(
-    (state, handle) => {
+    (state: boolean, handle: FullScreenHandle) => {
       if (handle === handleScreen) {
         setIsFullScreen(handleScreen.active);
       }

@@ -45,12 +45,19 @@ const data = [
   },
 ];
 
-const CustomTooltip = ({ active, payload, label }) => {
+const CustomTooltip = ({
+  active,
+  payload,
+}: {
+  active?: boolean;
+  payload?: any[];
+}) => {
+  console.log({ active, payload });
   if (active && payload && payload.length) {
     return (
       <div className="custom-tooltip">
         <p className="label font-bold">
-          {`${payload[0].value}`}
+          {`${payload[0]?.value}`}
           <span className="text-xs">m3</span>
         </p>
       </div>

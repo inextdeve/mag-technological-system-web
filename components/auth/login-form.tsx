@@ -2,7 +2,7 @@
 import { sessionActions } from "@/store";
 import { Button, Checkbox, Input } from "@nextui-org/react";
 import dayjs from "dayjs";
-import { useState } from "react";
+import { MouseEventHandler, ReactEventHandler, useState } from "react";
 import {
   handleLoginTokenListeners,
   nativeEnvironment,
@@ -40,8 +40,7 @@ const LoginForm = () => {
     }
   };
 
-  const handlePasswordLogin = async (event) => {
-    event.preventDefault();
+  const handlePasswordLogin = async () => {
     setFailed(false);
     try {
       const query = `email=${encodeURIComponent(
@@ -98,6 +97,7 @@ const LoginForm = () => {
         Remember me
       </Checkbox>
       <Button
+        type="button"
         onClick={handlePasswordLogin}
         className="bg-gradient-to-r from-blue-400 to-purple-900 text-white shadow-lg font-semibold py-6"
       >
