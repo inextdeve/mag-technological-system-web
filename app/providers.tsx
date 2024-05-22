@@ -21,9 +21,24 @@ export const FullScreenProvider = ({
 }) => {
   const handleScreen = useFullScreenHandle();
 
+  const [isFullScreen, setIsFullScreen] = React.useState(handleScreen.active);
+
+  const reportChange = React.useCallback(
+    (state, handle) => {
+      if (handle === handleScreen) {
+        setIsFullScreen(handleScreen.active);
+      }
+    },
+    [handleScreen]
+  );
+
   return (
-    <FullScreen handle={handleScreen}>
-      <FullScreenContext.Provider value={handleScreen}>
+    <FullScreen
+      handle={handleScreen}
+      onChange={reportChange}
+      className="bg-background"
+    >
+      <FullScreenContext.Provider value={{ handleScreen, isFullScreen }}>
         {children}
       </FullScreenContext.Provider>
     </FullScreen>

@@ -19,7 +19,9 @@ export const SidebarWrapper = () => {
   return (
     <aside className="h-screen z-[20] sticky top-0">
       {collapsed ? (
-        <div className={Sidebar.Overlay()} onClick={setCollapsed} />
+        <div className={Sidebar.Overlay()} onClick={setCollapsed}>
+          Click
+        </div>
       ) : null}
       <div
         className={Sidebar({
@@ -43,12 +45,6 @@ export const SidebarWrapper = () => {
               href="/"
             />
             <SidebarMenu title="Main Menu">
-              {/* <SidebarItem
-                isActive={pathname === "/accounts"}
-                title="Accounts"
-                icon={<AccountsIcon />}
-                href="accounts"
-              /> */}
               <SidebarItem
                 isActive={pathname.indexOf("/equipment") > -1}
                 title="Equipment"

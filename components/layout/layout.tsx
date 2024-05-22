@@ -24,11 +24,12 @@ export const Layout = ({ children }: Props) => {
         setCollapsed: handleToggleSidebar,
       }}
     >
-      <section className="flex">
-        <SidebarWrapper />
-
-        <NavbarWrapper>{children}</NavbarWrapper>
-      </section>
+      <FullScreenProvider>
+        <section className="flex">
+          <SidebarWrapper />
+          <NavbarWrapper>{children}</NavbarWrapper>
+        </section>
+      </FullScreenProvider>
     </SidebarContext.Provider>
   );
 };
