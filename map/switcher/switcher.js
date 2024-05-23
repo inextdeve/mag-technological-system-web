@@ -1,4 +1,3 @@
-"use client";
 import "./switcher.css";
 
 export class SwitcherControl {

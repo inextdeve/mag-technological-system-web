@@ -22,24 +22,23 @@ const LoginForm = () => {
   const [codeEnabled, setCodeEnabled] = useState(false);
 
   const generateLoginToken = async () => {
-    if (window !== undefined)
-      if (nativeEnvironment) {
-        let token = "";
-        try {
-          const expiration = dayjs().add(6, "months").toISOString();
-          const response = await fetch("/api/session/token", {
-            method: "POST",
-            body: new URLSearchParams(`expiration=${expiration}`),
-          });
-          if (response.ok) {
-            token = await response.text();
-          }
-        } catch (error) {
-          token = "";
+    if (nativeEnvironment) {
+      let token = "";
+      try {
+        const expiration = dayjs().add(6, "months").toISOString();
+        const response = await fetch("/api/session/token", {
+          method: "POST",
+          body: new URLSearchParams(`expiration=${expiration}`),
+        });
+        if (response.ok) {
+          token = await response.text();
         }
-
-        nativePostMessage(`login|${token}`);
+      } catch (error) {
+        token = "";
       }
+
+      nativePostMessage(`login|${token}`);
+    }
   };
 
   const handlePasswordLogin = async () => {

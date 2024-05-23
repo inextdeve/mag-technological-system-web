@@ -7,7 +7,7 @@ import DesignatedLandPng from "@/resources/images/png/designated-land.png";
 import SafetyTable from "./table/table";
 const SafetyManagement = () => {
   return (
-    <div className="grid md:grid-cols-3 grid-cols-1 gap-4 justify-between">
+    <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 justify-between">
       <Card className="bg-[#0AB9BF]/15 max-h-fit grow justify-center">
         <CardHeader className="text-center font-bold flex flex-col justify-center items-center gap-4 pt-4">
           <span>
@@ -67,7 +67,7 @@ const SafetyManagement = () => {
           </p>
         </CardFooter>
       </Card>
-      <div className="col-span-3">
+      <div className="md:col-span-full">
         <SafetyTable />
       </div>
     </div>

@@ -11,10 +11,10 @@ const FinancialSummaries = () => {
       {/* Analytics */}
       <Analytics />
       <div className="grid grid-cols-5 gap-4 items-stretch mt-4">
-        <div className="col-span-3">
+        <div className="md:col-span-3 col-span-full">
           <Transactions />
         </div>
-        <div className="col-span-2">
+        <div className="md:col-span-2 col-span-full">
           <ProgressLevel />
         </div>
       </div>

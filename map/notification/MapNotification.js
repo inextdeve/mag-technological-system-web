@@ -1,4 +1,3 @@
-"use client";
 import { useEffect, useMemo } from "react";
 import { map } from "../core/MapView";
 import "./notification.css";

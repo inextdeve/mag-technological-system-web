@@ -5,7 +5,7 @@ import { CardFinance4 } from "../home/financial-sum/card-finance4";
 
 const GeneralStatus = () => {
   return (
-    <div className="flex w-full items-start justify-between gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex w-full items-start justify-between gap-4">
       <CardFinance1 />
       <CardFinance2 />
       <CardFinance3 />

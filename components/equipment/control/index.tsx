@@ -6,7 +6,7 @@ import VehicleControl from "./vehicle-control";
 const Control = () => {
   return (
     <div className="grid grid-cols-5 gap-2 items-stretch">
-      <div className="col-span-5 flex gap-10 items-center mb-6">
+      <div className="col-span-5 flex gap-10 items-center mb-6 order-1 p-3 md:order-none">
         <Input
           placeholder="Equipment code"
           classNames={{ inputWrapper: "bg-[#0AB9BF26]" }}
@@ -26,10 +26,10 @@ const Control = () => {
           </div>
         </div>
       </div>
-      <div className="col-span-3">
+      <div className="md:col-span-3 col-span-full order-3 md:order-none">
         <NavigationCamera />
       </div>
-      <div className="col-span-2">
+      <div className="md:col-span-2 col-span-full order-2 md:order-none">
         <VehicleControl />
       </div>
     </div>

@@ -10,7 +10,6 @@ import { UserDropdown } from "./user-dropdown";
 import Logo from "../logo";
 import FullscreenButton from "./fullscreen-button";
 import TabsMenu from "./tabs";
-import { FullScreenProvider } from "@/app/providers";
 
 interface Props {
   children: React.ReactNode;
@@ -26,9 +25,9 @@ export const NavbarWrapper = ({ children }: Props) => {
           wrapper: "w-full max-w-full",
         }}
       >
-        {/* <NavbarContent className="md:hidden">
+        <NavbarContent className="xl:hidden">
           <BurguerButton />
-        </NavbarContent> */}
+        </NavbarContent>
         <NavbarContent justify="end">
           <TabsMenu />
         </NavbarContent>

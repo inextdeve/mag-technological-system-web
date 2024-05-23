@@ -6,7 +6,7 @@ import Filter from "./filter";
 const Analytics = () => {
   return (
     <Card className="bg-[#0AB9BF3f] mt-4">
-      <CardHeader className="flex items-center">
+      <CardHeader className="flex items-center flex-wrap">
         <h4 className="w-[30%] text-xl font-semibold px-8 text-[#F29701]">
           Analytics
         </h4>
