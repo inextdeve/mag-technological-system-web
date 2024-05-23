@@ -1,6 +1,6 @@
 import { Progress, Tooltip } from "@nextui-org/react";
 
-const CustomValueLabel = ({ value }) => {
+const CustomValueLabel = ({ value }: { value: number | string }) => {
   return (
     <Tooltip
       showArrow={true}

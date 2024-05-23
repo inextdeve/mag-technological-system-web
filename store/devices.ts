@@ -1,19 +1,27 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
+
+interface DevicesState {
+  items: { [key: number]: Device };
+  selectedId: number | null;
+  selectedIds: number[] | [];
+}
+
+const initialState: DevicesState = {
+  items: {},
+  selectedId: null,
+  selectedIds: [],
+};
 
 const { reducer, actions } = createSlice({
-  name: 'devices',
-  initialState: {
-    items: {},
-    selectedId: null,
-    selectedIds: [],
-  },
+  name: "devices",
+  initialState,
   reducers: {
     refresh(state, action) {
       state.items = {};
-      action.payload.forEach((item) => state.items[item.id] = item);
+      action.payload.forEach((item: Device) => (state.items[item.id] = item));
     },
     update(state, action) {
-      action.payload.forEach((item) => state.items[item.id] = item);
+      action.payload.forEach((item: Device) => (state.items[item.id] = item));
     },
     select(state, action) {
       state.selectedId = action.payload;

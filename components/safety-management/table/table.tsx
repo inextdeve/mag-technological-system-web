@@ -63,11 +63,11 @@ export default function SafetyTable() {
   const filteredItems = React.useMemo(() => {
     let filteredUsers = [...users];
 
-    if (hasSearchFilter) {
-      filteredUsers = filteredUsers.filter((user) =>
-        user.name.toLowerCase().includes(filterValue.toLowerCase())
-      );
-    }
+    // if (hasSearchFilter) {
+    //   filteredUsers = filteredUsers.filter((user) =>
+    //     user.name.toLowerCase().includes(filterValue.toLowerCase())
+    //   );
+    // }
 
     return filteredUsers;
   }, [users, filterValue]);

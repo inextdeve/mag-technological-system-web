@@ -1,9 +1,13 @@
-import LoginForm from "@/components/auth/login-form";
 import GlassCard from "@/components/glassmorphism/glass-card";
 import FacebookIcon from "@/components/icons/login/facebook";
 import GoogleIcon from "@/components/icons/login/google";
 import { Button, Checkbox, Input } from "@nextui-org/react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
+
+const LoginForm = dynamic(() => import("@/components/auth/login-form"), {
+  ssr: false,
+});
 
 const Page = () => {
   return (

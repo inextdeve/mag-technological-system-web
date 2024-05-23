@@ -1,4 +1,3 @@
-import MapView from "@/map/core/MapView";
 import { Progress } from "@nextui-org/react";
 import Truck1 from "@/resources/images/png/truck2-rm-later.png";
 import Truck2 from "@/resources/images/png/truck-rm-later.png";

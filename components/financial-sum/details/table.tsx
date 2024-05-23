@@ -1,3 +1,4 @@
+// @ts-nocheck
 "use client";
 import React from "react";
 import {
@@ -75,11 +76,11 @@ export default function ReportsTable() {
   const filteredItems = React.useMemo(() => {
     let filteredUsers = [...users];
 
-    if (hasSearchFilter) {
-      filteredUsers = filteredUsers.filter((user) =>
-        user.name.toLowerCase().includes(filterValue.toLowerCase())
-      );
-    }
+    // if (hasSearchFilter) {
+    //   filteredUsers = filteredUsers.filter((user) =>
+    //     user.name.toLowerCase().includes(filterValue.toLowerCase())
+    //   );
+    // }
     if (
       statusFilter !== "all" &&
       Array.from(statusFilter).length !== statusOptions.length

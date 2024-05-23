@@ -1,11 +1,20 @@
+// @ts-nocheck
 import { useId, useEffect } from "react";
-import { useSelector } from "react-redux";
 import { map } from "./core/MapView";
+import { useAppSelector } from "@/components/hooks/rtk";
 
-const MapRoutePath = ({ name, positions, coordinates }) => {
+const MapRoutePath = ({
+  name,
+  positions,
+  coordinates,
+}: {
+  name?: string;
+  positions: any;
+  coordinates?: any;
+}) => {
   const id = useId();
 
-  const reportColor = useSelector((state) => {
+  const reportColor = useAppSelector((state) => {
     const position = positions?.find(() => true);
     if (position) {
       const attributes = state.devices.items[position.deviceId]?.attributes;

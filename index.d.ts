@@ -21,3 +21,28 @@ interface FullScreenProps {
   className?: string;
   // Optional prop allowing you to apply a custom class name to the FullScreen container
 }
+
+interface Device {
+  id: number;
+  name: string;
+  uniqueid: string;
+  lastUpdate: Date | null;
+  positionid: number | null;
+  groupid: number | null;
+  attributes: string | null;
+  phone: string | null;
+  model: string | null;
+  contact: string | null;
+  category: string | null;
+  disabled: boolean | null;
+  status: string | null;
+  expirationtime: Date | null;
+  motionstate: boolean | null;
+  motiontime: Date | null;
+  motiondistance: number | null;
+  overspeedstate: boolean | null;
+  overspeedtime: Date | null;
+  overspeedgeofenceid: number | null;
+  motionstreak: boolean | null;
+  calendarid: number | null;
+}

@@ -1,11 +1,10 @@
 "use client";
 import React, { useEffect } from "react";
-import { Accordion, AccordionItem, Avatar, Button } from "@nextui-org/react";
+import { Accordion, AccordionItem, Avatar } from "@nextui-org/react";
 import { Navigation, Truck } from "lucide-react";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
 import { devicesActions } from "@/store";
 import moment from "moment";
+import { useAppDispatch, useAppSelector } from "@/components/hooks/rtk";
 
 interface Props {
   handleSubmit: () => void;
@@ -23,12 +22,8 @@ const TripButton = ({ onClick }: { onClick: () => void }) => {
 };
 
 export default function DevicesList({ handleSubmit }: Props) {
-  const devices = useSelector((state) => state.devices.items);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    console.log(devices);
-  }, [devices]);
+  const devices = useAppSelector((state) => state.devices.items);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     (async () => {

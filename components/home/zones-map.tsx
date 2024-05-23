@@ -1,6 +1,9 @@
-import MapView from "@/map/core/MapView";
-import { Button, Card, CardBody, CardFooter } from "@nextui-org/react";
+// @ts-nocheck
+import { Card, CardBody, CardFooter } from "@nextui-org/react";
 import ButtonLink from "../button-link";
+import dynamic from "next/dynamic";
+
+const MapView = dynamic(() => import("@/map/core/MapView"), { ssr: false });
 
 const ZonesMap = () => {
   return (

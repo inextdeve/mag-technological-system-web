@@ -1,14 +1,16 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import MapView from "../../map/core/MapView";
 import MapPositions from "../../map/MapPositions";
 import { positions as pos } from "./data";
 import usePersistedState from "@/helpers/usePersistedState";
 import useFilter from "@/components/hooks/useFilter";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "../hooks/rtk";
+import dynamic from "next/dynamic";
+
+const MapView = dynamic(() => import("@/map/core/MapView"), { ssr: false });
 
 const MainMap = () => {
-  const positions = useSelector((state) => state.session.positions);
+  const positions = useAppSelector((state) => state.session.positions);
 
   const [filteredPositions, setFilteredPositions] = useState([]);
   const [keyword, setKeyword] = useState("");
@@ -38,8 +40,10 @@ const MainMap = () => {
         <MapPositions
           titleField={""}
           positions={filteredPositions}
-          // onClick={onMarkerClick}
-          // selectedPosition={selectedPosition}
+          // On mark click
+          onClick={() => {}}
+          // Send selected position
+          selectedPosition={[]}
           showStatus
         />
       </MapView>
