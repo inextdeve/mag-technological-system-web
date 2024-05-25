@@ -9,6 +9,9 @@ import StatusCard from "./status-card";
 import Carousel from "./carousel";
 import { useAppSelector } from "@/components/hooks/rtk";
 import dynamic from "next/dynamic";
+import useFilter from "@/components/hooks/useFilter";
+import usePersistedState from "@/helpers/usePersistedState";
+import MainMap from "./map";
 
 const MapView = dynamic(() => import("@/map/core/MapView"), { ssr: false });
 const MapRoutePath = dynamic(() => import("@/map/MapRoutePath"), {
@@ -25,7 +28,7 @@ const MapGeofence = dynamic(() => import("@/map/MapGeofence"), { ssr: false });
 const Track = () => {
   const defaultDeviceId = useAppSelector((state) => state.devices.selectedId);
 
-  const [positions, setPositions] = useState([]);
+  const positions = useAppSelector((state) => state.session.positions);
   const [index, setIndex] = useState(0);
   const [selectedDeviceId, setSelectedDeviceId] = useState(defaultDeviceId);
   const [showCard, setShowCard] = useState(false);
@@ -34,38 +37,38 @@ const Track = () => {
   const [expanded, setExpanded] = useState(true);
   const [playing, setPlaying] = useState(false);
 
-  const handleSubmit = useCatch(
-    async ({
-      deviceId = 195,
-      from,
-      to,
-    }: {
-      deviceId: number;
-      from: string;
-      to: string;
-    }) => {
-      setSelectedDeviceId(deviceId);
+  // const handleSubmit = useCatch(
+  //   async ({
+  //     deviceId = 195,
+  //     from,
+  //     to,
+  //   }: {
+  //     deviceId: number;
+  //     from: string;
+  //     to: string;
+  //   }) => {
+  //     setSelectedDeviceId(deviceId);
 
-      const query = new URLSearchParams({
-        deviceId: deviceId.toLocaleString(),
-        from,
-        to,
-      });
-      const response = await fetch(`/api/positions?${query.toString()}`);
-      if (response.ok) {
-        setIndex(0);
-        const positions = await response.json();
-        setPositions(positions);
-        if (positions.length) {
-          setExpanded(false);
-        } else {
-          throw Error("no data");
-        }
-      } else {
-        throw Error(await response.text());
-      }
-    }
-  );
+  //     const query = new URLSearchParams({
+  //       deviceId: deviceId.toLocaleString(),
+  //       from,
+  //       to,
+  //     });
+  //     const response = await fetch(`/api/positions?${query.toString()}`);
+  //     if (response.ok) {
+  //       setIndex(0);
+  //       const positions = await response.json();
+  //       setPositions(positions);
+  //       if (positions.length) {
+  //         setExpanded(false);
+  //       } else {
+  //         throw Error("no data");
+  //       }
+  //     } else {
+  //       throw Error(await response.text());
+  //     }
+  //   }
+  // );
 
   const onPointClick = useCallback(
     (_: unknown, index: number) => {
@@ -80,29 +83,42 @@ const Track = () => {
     },
     [setShowCard]
   );
+  const [filteredPositions, setFilteredPositions] = useState([]);
+  const [filteredDevices, setFilteredDevices] = useState([]);
+
+  const [keyword, setKeyword] = useState("");
+  const [filter, setFilter] = usePersistedState("filter", {
+    statuses: [],
+    groups: [],
+  });
+  const [filterSort, setFilterSort] = usePersistedState("filterSort", "");
+  const [filterMap, setFilterMap] = usePersistedState("filterMap", false);
+
+  useFilter(
+    keyword,
+    filter,
+    filterSort,
+    filterMap,
+    positions,
+    setFilteredDevices,
+    setFilteredPositions
+  );
 
   return (
     <>
       <TimeRange setFrom={setFrom} setTo={setTo} />
       <div className="min-h-[500px] w-full grid mt-10 rounded-md overflow-hidden relative">
         <Toolbar>
-          <DevicesList handleSubmit={() => handleSubmit({ from, to })} />
+          <DevicesList
+            handleSubmit={() => {
+              // return handleSubmit({ from, to }
+              return;
+            }}
+          />
         </Toolbar>
         <StatusBar />
         <StatusCard />
-        <MapView>
-          <MapGeofence />
-          <MapRoutePath positions={positions} />
-          <MapRoutePoints positions={positions} onClick={onPointClick} />
-          {index < positions.length && (
-            //@ts-ignore
-            <MapPositions
-              positions={[positions[index]]}
-              onClick={onMarkerClick}
-              titleField="fixTime"
-            />
-          )}
-        </MapView>
+        <MainMap filteredPositions={filteredPositions} />
         <Carousel />
       </div>
     </>

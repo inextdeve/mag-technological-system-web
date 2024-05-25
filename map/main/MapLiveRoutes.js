@@ -1,7 +1,7 @@
 import { useId, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { map } from "../core/MapView";
-import { useAttributePreference } from "../../common/util/preferences";
+import { useAttributePreference } from "@/helpers/preferences";
 
 const MapLiveRoutes = () => {
   const id = useId();

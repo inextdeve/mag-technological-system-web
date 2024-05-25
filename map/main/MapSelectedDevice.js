@@ -1,10 +1,23 @@
 import { useEffect } from "react";
 
 import { useSelector } from "react-redux";
-import dimensions from "../../common/theme/dimensions";
 import { map } from "../core/MapView";
-import { usePrevious } from "../../reactHelper";
-import { useAttributePreference } from "../../common/util/preferences";
+import { usePrevious } from "@/helpers/reactHelper";
+import { useAttributePreference } from "@/helpers/preferences";
+
+const dimensions = {
+  sidebarWidth: "28%",
+  sidebarWidthTablet: "52px",
+  drawerWidthDesktop: "400px",
+  drawerWidthTablet: "320px",
+  drawerHeightPhone: "250px",
+  filterFormWidth: "160px",
+  eventsDrawerWidth: "320px",
+  bottomBarHeight: 56,
+  popupMapOffset: 300,
+  popupMaxWidth: 360,
+  popupImageHeight: 144,
+};
 
 const MapSelectedDevice = () => {
   const selectedDeviceId = useSelector((state) => state.devices.selectedId);
