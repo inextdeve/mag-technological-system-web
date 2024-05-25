@@ -50,11 +50,7 @@ export const useFullScreen = () => React.useContext(FullScreenContext);
 export function Providers({ children, themeProps }: ProvidersProps) {
   return (
     <NextUIProvider>
-      <NextThemesProvider
-        defaultTheme="light"
-        attribute="class"
-        {...themeProps}
-      >
+      <NextThemesProvider defaultTheme="dark" attribute="class" {...themeProps}>
         <Provider store={store}>{children}</Provider>
       </NextThemesProvider>
     </NextUIProvider>

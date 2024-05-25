@@ -17,7 +17,7 @@ const TimeRange = ({ setFrom, setTo }: Props) => {
   return (
     <div>
       <h4 className="font-meduim mb-2">Select a range of time</h4>
-      <div className="flex gap-3 items-center">
+      <div className="flex gap-3 items-center flex-wrap">
         <div className="max-w-fit">
           <DateRangePicker
             defaultValue={{
@@ -44,12 +44,14 @@ const TimeRange = ({ setFrom, setTo }: Props) => {
             }}
           />
         </div>
-        <Button className="rounded-md dark:bg-white text-background">
-          Cancel
-        </Button>
-        <Button className="rounded-md dark:text-black text-white bg-yellow-500">
-          Apply
-        </Button>
+        <div className="gap-3 flex">
+          <Button className="rounded-md dark:bg-white text-background">
+            Cancel
+          </Button>
+          <Button className="rounded-md dark:text-black text-white bg-yellow-500">
+            Apply
+          </Button>
+        </div>
       </div>
     </div>
   );

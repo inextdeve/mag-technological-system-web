@@ -17,8 +17,8 @@ import ZoneCarousel from "./zone-carousel";
 
 const QualityManagement = () => {
   return (
-    <div className="grid xl:grid-cols-5 gap-3 grid-cols-1">
-      <div className="col-span-2">
+    <div className="sm:grid xl:grid-cols-5 gap-3 grid-cols-1">
+      <div className="xl:col-span-2 col-span-full sm:mb-0 mb-3">
         <Card className="min-h-full bg-gradient-to-t from-white to-background rounded-xl shadow-md p-0 w-full">
           <CardHeader className="flex justify-between items-end">
             <div className="grid">
@@ -72,7 +72,7 @@ const QualityManagement = () => {
           </CardFooter>
         </Card>
       </div>
-      <div className="col-span-3 flex gap-3 flex-wrap">
+      <div className="xl:col-span-3 col-span-full flex gap-3 flex-wrap">
         <Card className="bg-white/15 max-h-fit grow justify-center">
           <CardHeader className="text-center font-bold flex flex-col justify-center items-center gap-4 pt-4">
             <span>

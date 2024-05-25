@@ -5,7 +5,6 @@ import { CardFinance1 } from "./financial-sum/card-finance1";
 import { CardFinance2 } from "./financial-sum/card-finance2";
 import { CardFinance3 } from "./financial-sum/card-finance3";
 import { CardFinance4 } from "./financial-sum/card-finance4";
-import { CardTransactions } from "./card-transactions";
 import Equipment from "./equipment";
 import ZonesMap from "./zones-map";
 import Quality from "./quality";
@@ -22,7 +21,7 @@ const Chart = dynamic(
 
 export const Content = () => (
   <div className="h-full lg:px-6">
-    <div className="grid grid-cols-3 justify-center gap-4 xl:gap-6 pt-3 px-4 lg:px-0  flex-wrap xl:flex-nowrap sm:pt-10 max-w-[90rem] mx-auto w-full">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center gap-4 xl:gap-6 pt-3 px-4 lg:px-0 sm:pt-10 max-w-[90rem] w-full mx-auto">
       {/* Left Section */}
       <div className="gap-2 flex flex-col ">
         <h3 className="text-xl font-semibold text-[#F29701]">Equipment</h3>
@@ -51,16 +50,16 @@ export const Content = () => (
       </div>
 
       {/* Financial Summaries */}
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 col-span-full lg:col-span-1">
         <h3 className="text-xl font-semibold text-[#F29701]">
           Financial Summaries
         </h3>
-        <div className="grid gap-12 w-full">
+        <div className="grid lg:grid-cols-1 grid-cols-2 lg:gap-12 gap-4 w-full">
           <CardFinance1 />
           <CardFinance2 />
           <CardFinance3 />
           <CardFinance4 />
-          <div className="xl:max-w-sm flex justify-center">
+          <div className="w-full flex flex-row justify-center col-span-full">
             <ButtonLink href="/">Details</ButtonLink>
           </div>
         </div>

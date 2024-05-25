@@ -11,6 +11,7 @@ import { FilterIcon } from "../icons/sidebar/filter-icon";
 import { useSidebarContext } from "../layout/layout-context";
 import { usePathname } from "next/navigation";
 import { Cpu, LineChart, ShieldCheck, Sparkles, Truck } from "lucide-react";
+import { UserDropdown } from "./user-dropdown/user-dropdown";
 
 export const SidebarWrapper = () => {
   const pathname = usePathname();
@@ -18,10 +19,9 @@ export const SidebarWrapper = () => {
 
   return (
     <aside className="h-screen z-[20] sticky top-0">
-      {collapsed ? (
-        <div className={Sidebar.Overlay()} onClick={setCollapsed}>
-          Click
-        </div>
+      {!collapsed ? (
+        // <div className={Sidebar.Overlay()} onClick={setCollapsed} />
+        <></>
       ) : null}
       <div
         className={Sidebar({
@@ -105,12 +105,13 @@ export const SidebarWrapper = () => {
                 <FilterIcon />
               </div>
             </Tooltip>
-            <Tooltip content={"Profile"} color="primary">
+            <UserDropdown />
+            {/* <Tooltip content={"Profile"} color="primary">
               <Avatar
                 src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
                 size="sm"
               />
-            </Tooltip>
+            </Tooltip> */}
           </div>
         </div>
       </div>

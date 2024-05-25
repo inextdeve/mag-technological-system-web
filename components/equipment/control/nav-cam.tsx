@@ -77,7 +77,7 @@ const Camera = () => {
 
 const NavigationCamera = () => {
   return (
-    <div className="grid grid-cols-2 gap-2 h-full">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 h-full">
       <Navigation />
       <Camera />
     </div>
