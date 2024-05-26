@@ -6,12 +6,17 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "s3-alpha-sig.figma.com",
+        hostname: "cdn-icons-png.freepik.com",
         pathname: "/**",
       },
       {
         protocol: "https",
         hostname: "avatars.githubusercontent.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "s3-alpha-sig.figma.com",
         pathname: "/**",
       },
     ],

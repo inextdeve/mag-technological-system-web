@@ -23,18 +23,6 @@ const TripButton = ({ onClick }: { onClick: () => void }) => {
 
 export default function DevicesList({ handleSubmit }: Props) {
   const devices = useAppSelector((state) => state.devices.items);
-  const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    (async () => {
-      const response = await fetch("/api/devices");
-      if (response.ok) {
-        dispatch(devicesActions.refresh(await response.json()));
-      } else {
-        throw Error(await response.text());
-      }
-    })();
-  }, []);
 
   return (
     <Accordion selectionMode="multiple">
@@ -58,14 +46,20 @@ export default function DevicesList({ handleSubmit }: Props) {
               subtitle={
                 device.status === "online"
                   ? "online"
-                  : moment(device.lastUpdate).fromNow()
+                  : device.lastUpdate != null
+                  ? moment(device.lastUpdate).fromNow()
+                  : "offline"
               }
               title={device.name}
               classNames={{
                 titleWrapper: "truncate",
                 title: "truncate text-md dark:text-gray-300 font-medium",
                 subtitle: `${
-                  device.status == "online" ? "text-green-400" : ""
+                  device.status == "online"
+                    ? "text-green-400"
+                    : device.lastUpdate != null
+                    ? ""
+                    : "text-danger-400"
                 }`,
               }}
             >

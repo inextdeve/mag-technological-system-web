@@ -10,6 +10,7 @@ const useAuth = () => {
 
   const initialized = useAppSelector((state) => !!state.session.user);
   const newServer = useAppSelector(
+    //@ts-ignore
     (state) => state?.session?.server?.newServer
   );
 

@@ -1,3 +1,4 @@
+//@ts-nocheck
 import MapView from "@/map/core/MapView";
 import {
   Card,
@@ -13,7 +14,7 @@ const Navigation = () => {
     <Card classNames={{ footer: "w-full" }}>
       <CardBody className="min-h-[400px]">
         <div className="h-full rounded-md overflow-hidden">
-          {/* <MapView></MapView> */}
+          <MapView></MapView>
         </div>
       </CardBody>
       <CardFooter className="grid gap-1">

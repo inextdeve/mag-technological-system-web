@@ -40,7 +40,7 @@ const MapAccuracy = ({ positions }) => {
     map.getSource(id)?.setData({
       type: "FeatureCollection",
       features: positions
-        .filter((position) => position.accuracy > 0)
+        ?.filter((position) => position.accuracy > 0)
         .map((position) =>
           circle(
             [position.longitude, position.latitude],

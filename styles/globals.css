@@ -57,3 +57,17 @@ body {
 .fullscreen-enabled aside {
   display: none;
 }
+.fullscreen-enabled {
+  position: relative;
+}
+.fullscreen-enabled .process-map-container {
+  position: relative;
+}
+.fullscreen-enabled .process-map-wrapper {
+  height: 100vh;
+  position: relative;
+}
+
+.fullscreen-enabled .zone-card {
+  display: none;
+}

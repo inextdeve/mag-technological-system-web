@@ -1,6 +1,7 @@
+"use client";
 // import { grey } from "@mui/material/colors";
 // import createPalette from "@mui/material/styles/createPalette";
-import { loadImage, prepareIcon } from "./mapUtil";
+
 import arrowSvg from "../../resources/images/arrow.svg";
 import directionSvg from "../../resources/images/direction.svg";
 import backgroundSvg from "../../resources/images/background.svg";
@@ -27,6 +28,9 @@ import trolleybusSvg from "../../resources/images/icon/trolleybus.svg";
 import truckSvg from "../../resources/images/icon/truck.svg";
 import vanSvg from "../../resources/images/icon/van.svg";
 
+import { loadImage, prepareIcon } from "./mapUtil";
+
+// const { loadImage, prepareIcon } = dynamic(() => import("./mapUtil"));
 
 export const mapIcons = {
   animal: animalSvg,

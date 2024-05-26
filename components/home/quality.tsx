@@ -9,7 +9,7 @@ const Quality = () => {
         <p className="flex gap-1 items-end">
           <span className="text-[#0AB9BF] text-4xl font-semibold">1000</span>
           <span className="text-xs text-[#F29701] leading-6 font-semibold">
-            3M
+            M3
           </span>
         </p>
       </CardHeader>

@@ -43,7 +43,15 @@ const PoiMap = dynamic(() => import("@/map/main/PoiMap"), {
   ssr: false,
 });
 
-const MainMap = ({ filteredPositions, selectedPosition, onEventsClick }) => {
+const TrackMap = ({
+  filteredPositions,
+  selectedPosition,
+  onEventsClick,
+}: {
+  filteredPositions?: any;
+  selectedPosition?: any;
+  onEventsClick?: any;
+}) => {
   const dispatch = useAppDispatch();
 
   //   const eventsAvailable = useSelector((state) => !!state.events.items.length);
@@ -51,7 +59,7 @@ const MainMap = ({ filteredPositions, selectedPosition, onEventsClick }) => {
   //   const features = useFeatures();
 
   const onMarkerClick = useCallback(
-    (_, deviceId: any) => {
+    (_: any, deviceId: any) => {
       dispatch(devicesActions.selectId(deviceId));
     },
     [dispatch]
@@ -69,6 +77,7 @@ const MainMap = ({ filteredPositions, selectedPosition, onEventsClick }) => {
           onClick={onMarkerClick}
           selectedPosition={selectedPosition}
           showStatus
+          titleField={""}
         />
         <MapDefaultCamera />
         <MapSelectedDevice />
@@ -87,4 +96,4 @@ const MainMap = ({ filteredPositions, selectedPosition, onEventsClick }) => {
   );
 };
 
-export default MainMap;
+export default TrackMap;

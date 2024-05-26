@@ -1,3 +1,4 @@
+//@ts-nocheck
 import {
   Avatar,
   Dropdown,
@@ -9,7 +10,6 @@ import React from "react";
 import { DarkModeSwitch } from "../../navbar/darkmodeswitch";
 import { useAppSelector } from "../../hooks/rtk";
 import dynamic from "next/dynamic";
-
 const LogoutItem = dynamic(() => import("./logout-item"), { ssr: false });
 
 export const UserDropdown = () => {
@@ -17,12 +17,7 @@ export const UserDropdown = () => {
   return (
     <Dropdown>
       <DropdownTrigger>
-        <Avatar
-          as="button"
-          color="secondary"
-          size="md"
-          src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
-        />
+        <Avatar as="button" color="warning" size="md" />
       </DropdownTrigger>
 
       <DropdownMenu

@@ -204,7 +204,7 @@ const MapPositions = ({
       map.getSource(source)?.setData({
         type: "FeatureCollection",
         features: positions
-          .filter((it) => devices.hasOwnProperty(it.deviceId))
+          ?.filter((it) => devices.hasOwnProperty(it.deviceId))
           .filter((it) =>
             source === id
               ? it.deviceId !== selectedDeviceId

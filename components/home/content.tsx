@@ -60,7 +60,7 @@ export const Content = () => (
           <CardFinance3 />
           <CardFinance4 />
           <div className="w-full flex flex-row justify-center col-span-full">
-            <ButtonLink href="/">Details</ButtonLink>
+            <ButtonLink href="/financial">Details</ButtonLink>
           </div>
         </div>
       </div>

@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { nativePostMessage } from "@/components/common/NativeInterface";
 import { useAppDispatch, useAppSelector } from "@/components/hooks/rtk";
 import { sessionActions } from "@/store";

@@ -1,3 +1,4 @@
+//@ts-nocheck
 "use client";
 import TimeRange from "./time-range";
 import Toolbar from "./toolbar";
@@ -11,24 +12,13 @@ import { useAppSelector } from "@/components/hooks/rtk";
 import dynamic from "next/dynamic";
 import useFilter from "@/components/hooks/useFilter";
 import usePersistedState from "@/helpers/usePersistedState";
-import MainMap from "./map";
-
-const MapView = dynamic(() => import("@/map/core/MapView"), { ssr: false });
-const MapRoutePath = dynamic(() => import("@/map/MapRoutePath"), {
-  ssr: false,
-});
-const MapRoutePoints = dynamic(() => import("@/map/MapRoutePoints"), {
-  ssr: false,
-});
-const MapPositions = dynamic(() => import("@/map/MapPositions"), {
-  ssr: false,
-});
-const MapGeofence = dynamic(() => import("@/map/MapGeofence"), { ssr: false });
+import TrackMap from "./map";
 
 const Track = () => {
   const defaultDeviceId = useAppSelector((state) => state.devices.selectedId);
 
   const positions = useAppSelector((state) => state.session.positions);
+  const devices = useAppSelector((state) => state.devices.items);
   const [index, setIndex] = useState(0);
   const [selectedDeviceId, setSelectedDeviceId] = useState(defaultDeviceId);
   const [showCard, setShowCard] = useState(false);
@@ -117,9 +107,9 @@ const Track = () => {
           />
         </Toolbar>
         <StatusBar />
-        <StatusCard />
-        <MainMap filteredPositions={filteredPositions} />
-        <Carousel />
+        {/* <StatusCard /> */}
+        <TrackMap filteredPositions={filteredPositions} />
+        <Carousel devices={devices} />
       </div>
     </>
   );
