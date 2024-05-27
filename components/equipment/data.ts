@@ -1,17 +1,14 @@
-import React from "react";
 const columns = [
   { name: "ID", uid: "id", sortable: true },
-  { name: "EQUIPMENT CODE", uid: "age", sortable: true },
-  { name: "TYPE", uid: "role", sortable: true },
-  { name: "DRIVER NAME", uid: "name", sortable: true },
-
+  { name: "EQUIPMENT CODE", uid: "uniqueId", sortable: true },
+  { name: "DEVICE NAME", uid: "name", sortable: true },
   { name: "STATUS", uid: "status", sortable: true },
 ];
 
 const statusOptions = [
-  { name: "Active", uid: "active" },
-  { name: "Paused", uid: "paused" },
-  { name: "Vacation", uid: "vacation" },
+  { name: "Active", uid: "online" },
+  { name: "Paused", uid: "offline" },
+  // { name: "Vacation", uid: "vacation" },
 ];
 
 const users = [
