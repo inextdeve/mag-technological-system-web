@@ -3,6 +3,7 @@ import TruckIcon from "../icons/equipment/truck";
 import { SwitchOffIcon } from "../icons/equipment/switch";
 import CheckTimeIcon from "../icons/equipment/checkTime";
 import { ArrowDown } from "lucide-react";
+import OverviewItem from "./overview-item";
 
 const Overview = () => {
   return (
@@ -13,7 +14,9 @@ const Overview = () => {
         </div>
         <div className="info">
           <h5 className="text-sm font-bold pt-1">Total equipment</h5>
-          <h2 className="text-xl font-semibold text-yellow-600">5423</h2>
+          <h2 className="text-xl font-semibold text-yellow-600">
+            <OverviewItem type="total" />
+          </h2>
         </div>
       </div>
       <Divider orientation="vertical" className="h-12" />
@@ -23,10 +26,7 @@ const Overview = () => {
         </div>
         <div className="info">
           <h5 className="text-sm font-bold pt-1">Inactive Now</h5>
-          <h2 className="text-xl font-semibold text-yellow-600">530</h2>
-          <span className="text-red-500 text-sm flex items-center">
-            <ArrowDown className="w-4 h-4" /> 10%
-          </span>
+          <OverviewItem type="inactive" />
         </div>
       </div>
       <Divider orientation="vertical" className="h-12" />
@@ -36,7 +36,9 @@ const Overview = () => {
         </div>
         <div className="info">
           <h5 className="text-sm font-bold pt-1">Active Now</h5>
-          <h2 className="text-xl font-semibold text-yellow-600">4893</h2>
+          <h2 className="text-xl font-semibold text-yellow-600">
+            <OverviewItem type="active" />
+          </h2>
         </div>
       </div>
     </div>
