@@ -9,6 +9,7 @@ import usePersistedState, {
 } from "@/helpers/usePersistedState";
 import { mapImages } from "./preloadImages";
 import useMapStyles from "./useMapStyles";
+import dynamic from "next/dynamic";
 
 const element = document.createElement("div");
 element.style.width = "100%";
@@ -39,6 +40,10 @@ const updateReadyValue = (value) => {
 
 const initMap = async () => {
   if (ready) return;
+  maplibregl.setRTLTextPlugin(
+    "https://unpkg.com/@mapbox/mapbox-gl-rtl-text@0.2.3/mapbox-gl-rtl-text.js",
+    false
+  );
   if (!map.hasImage("background")) {
     Object.entries(mapImages).forEach(([key, value]) => {
       map.addImage(key, value, {

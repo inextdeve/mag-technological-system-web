@@ -96,7 +96,7 @@ const Track = () => {
 
   return (
     <>
-      <TimeRange setFrom={setFrom} setTo={setTo} />
+      {/* <TimeRange setFrom={setFrom} setTo={setTo} /> */}
       <div className="min-h-[500px] w-full grid mt-10 rounded-md overflow-hidden relative">
         <Toolbar>
           <DevicesList
@@ -108,7 +108,7 @@ const Track = () => {
         </Toolbar>
         <StatusBar />
         {/* <StatusCard /> */}
-        <TrackMap filteredPositions={filteredPositions} />
+        {/* <TrackMap filteredPositions={filteredPositions} /> */}
         <Carousel devices={devices} />
       </div>
     </>
