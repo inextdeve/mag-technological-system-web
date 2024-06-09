@@ -16,10 +16,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1"
-      ></meta>
       <body className={clsx("font-sans antialiased", fontSans.className)}>
         <Providers>{children}</Providers>
       </body>

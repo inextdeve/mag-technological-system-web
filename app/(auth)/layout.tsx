@@ -10,9 +10,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="grid grid-cols-3 items-center container mx-auto pt-40">
+    <div className="grid lg:grid-cols-3 grid-cols-1 items-center container mx-auto lg:pt-40 pt-20">
       {children}
-      <footer className="flex gap-8 justify-center col-span-2 items-center -translate-y-10">
+      <footer className="flex gap-8 justify-center col-span-2 items-center lg:-translate-y-10">
         <div>
           <MagIcon />
         </div>

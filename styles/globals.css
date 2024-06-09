@@ -33,7 +33,7 @@ body {
   background: linear-gradient(to bottom right, #530061, #0d0a30);
   position: absolute;
   bottom: -5%;
-  right: -5%;
+  right: -100%;
   z-index: -200;
 }
 

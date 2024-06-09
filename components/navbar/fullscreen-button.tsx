@@ -14,11 +14,21 @@ const FullscreenButton = () => {
   return (
     <>
       {!isFullScreen ? (
-        <Button variant="light" size="sm" onClick={handleScreen.enter}>
+        <Button
+          variant="light"
+          size="sm"
+          onClick={handleScreen.enter}
+          className="md:block hidden"
+        >
           <Fullscreen className="w-7 h-7 text-cyan-500" />
         </Button>
       ) : (
-        <Button variant="light" size="sm" onClick={handleScreen.exit}>
+        <Button
+          variant="light"
+          size="sm"
+          onClick={handleScreen.exit}
+          className="md:block hidden"
+        >
           <Fullscreen className="w-7 h-7 text-cyan-500" />
         </Button>
       )}

@@ -10,7 +10,7 @@ const data02 = [
 
 const Employment = () => {
   return (
-    <Card className=" bg-default-50 rounded-xl shadow-md px-4 py-6 w-full">
+    <Card className=" bg-default-50 rounded-xl shadow-md md:px-4 py-6 w-full">
       <CardBody className="py-5 min-h-[400px]">
         <CustomPieChart data={data02} />
       </CardBody>

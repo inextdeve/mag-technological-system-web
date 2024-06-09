@@ -12,10 +12,10 @@ const LoginForm = dynamic(() => import("@/components/auth/login-form"), {
 const Page = () => {
   return (
     <>
-      <div className="col-span-2 flex items-center justify-center">
+      <div className="col-span-2 lg:flex items-center justify-center hidden">
         <h1 className=" text-6xl font-semibold">Welcome back.!</h1>
       </div>
-      <div className="login-container relative">
+      <div className="login-container relative flex justify-center">
         <GlassCard className="p-8 pt-20 pb-5 max-w-[390px]">
           <h2 className="text-2xl font-bold">Login</h2>
           <span className="text-sm font-semibold">Glad you&apos;re back.!</span>

@@ -5,10 +5,10 @@ import Link from "next/link";
 const Page = () => {
   return (
     <>
-      <div className="col-span-2 flex items-center justify-center">
+      <div className="col-span-2 lg:flex hidden items-center justify-center">
         <h1 className=" text-6xl font-semibold">Forgot Password ?</h1>
       </div>
-      <div className="login-container relative">
+      <div className="login-container relative flex justify-center">
         <GlassCard className="p-8 pt-20 pb-5 max-w-[390px]">
           <h2 className="text-2xl font-bold">Forgot Password ?</h2>
           <span className="text-sm font-semibold">
