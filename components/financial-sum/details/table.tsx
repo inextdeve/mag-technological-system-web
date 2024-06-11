@@ -177,7 +177,7 @@ export default function ReportsTable() {
           Details: <span className="text-[#0AB9BF]">Mustakhlas 1</span>
         </h2>
         <div className="flex justify-between gap-3 items-end">
-          <div className="flex gap-3 items-center justify-end w-full">
+          <div className="flex gap-3 items-center justify-end w-full sm:flex-row flex-col">
             <Input
               isClearable
               classNames={{
@@ -221,7 +221,7 @@ export default function ReportsTable() {
               </DropdownMenu>
             </Dropdown> */}
             <Dropdown>
-              <DropdownTrigger className="hidden sm:flex">
+              <DropdownTrigger className="sm:flex">
                 <Button
                   endContent={<ChevronDownIcon className="text-small" />}
                   size="sm"
@@ -305,6 +305,7 @@ export default function ReportsTable() {
 
   const classNames = React.useMemo(
     () => ({
+      base: "overflow-x-scroll",
       wrapper: ["max-h-[382px]", "max-w-3xl"],
       th: [
         "bg-transparent",
@@ -362,7 +363,7 @@ export default function ReportsTable() {
             </TableColumn>
           )}
         </TableHeader>
-        <TableBody emptyContent={"No users found"} items={sortedItems}>
+        <TableBody emptyContent={"No data found"} items={sortedItems}>
           {(item) => (
             <TableRow key={item.id}>
               {(columnKey) => (

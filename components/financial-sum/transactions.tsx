@@ -19,16 +19,16 @@ const Transactions = () => {
 
   return (
     <Card className="bg-[#0AB9BF3f]">
-      <CardHeader className="flex items-center justify-between">
-        <h4 className="text-xl font-semibold px-8 text-[#F29701]">
+      <CardHeader className="md:flex items-center justify-between block">
+        <h4 className="text-xl font-semibold px-8 text-[#F29701] md:mb-0 mb-4">
           Transactions
         </h4>
-        <div className="flex gap-3">
+        <div className="flex md:flex-row flex-col md:justify-center gap-3">
           <Input type="search" variant="bordered" placeholder="Search" />
           <DateRangePicker variant="bordered" />
         </div>
       </CardHeader>
-      <CardBody>
+      <CardBody className="px-0 md:px-3">
         <Table
           aria-label="Example static collection table"
           classNames={{

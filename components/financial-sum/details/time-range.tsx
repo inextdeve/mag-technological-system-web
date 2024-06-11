@@ -18,8 +18,13 @@ const TimeRange = ({ setFrom, setTo }: Props) => {
     <div>
       <h4 className="font-meduim mb-2">Select a range of time</h4>
       <div className="flex gap-3 items-center flex-wrap">
-        <div className="max-w-fit">
+        <div className="md:max-w-fit w-full">
           <DateRangePicker
+            classNames={{
+              innerWrapper: "flex-wrap h-auto md:h-10",
+              inputWrapper: "h-auto items-start",
+              input: "w-fit",
+            }}
             defaultValue={{
               start: parseZonedDateTime("2024-04-01T00:45[Asia/Riyadh]"),
               end: parseZonedDateTime("2024-04-14T11:15[Asia/Riyadh]"),
@@ -44,12 +49,12 @@ const TimeRange = ({ setFrom, setTo }: Props) => {
             }}
           />
         </div>
-        <Select className="min-w-[150px] max-w-fit" placeholder="Zones">
+        <Select className="min-w-[150px] md:max-w-fit" placeholder="Zones">
           <SelectItem key="zone-1" value="zone-1">
             Zone 1
           </SelectItem>
         </Select>
-        <div className="flex gap-3">
+        <div className="flex gap-3 md:grow-0 md:justify-normal grow justify-center">
           <Button className="rounded-md bg-white text-background">
             Cancel
           </Button>

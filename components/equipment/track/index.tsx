@@ -13,6 +13,8 @@ import dynamic from "next/dynamic";
 import useFilter from "@/components/hooks/useFilter";
 import usePersistedState from "@/helpers/usePersistedState";
 import TrackMap from "./map";
+import { Button } from "@nextui-org/react";
+import { cn } from "@/helpers/utils";
 
 const Track = () => {
   const defaultDeviceId = useAppSelector((state) => state.devices.selectedId);
@@ -94,11 +96,22 @@ const Track = () => {
     setFilteredPositions
   );
 
+  const [showDevices, setShowDevices] = useState(false);
+
   return (
     <>
       {/* <TimeRange setFrom={setFrom} setTo={setTo} /> */}
-      <div className="min-h-[500px] w-full grid mt-10 rounded-md overflow-hidden relative">
-        <Toolbar>
+      <div className="md:min-h-[500px] h-screen w-full md:grid flex-col mt-10 rounded-md overflow-hidden relative">
+        <Button
+          className="md:hidden w-full mb-4"
+          onClick={() => setShowDevices(true)}
+        >
+          Devices
+        </Button>
+        <Toolbar
+          className={cn({ hidden: !showDevices })}
+          onClose={() => setShowDevices(false)}
+        >
           <DevicesList
             handleSubmit={() => {
               // return handleSubmit({ from, to }
@@ -108,8 +121,9 @@ const Track = () => {
         </Toolbar>
         <StatusBar />
         {/* <StatusCard /> */}
-        {/* <TrackMap filteredPositions={filteredPositions} /> */}
         <Carousel devices={devices} />
+
+        <TrackMap filteredPositions={filteredPositions} />
       </div>
     </>
   );

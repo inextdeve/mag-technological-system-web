@@ -6,7 +6,7 @@ import Image from "next/image";
 import GlassCard from "../glassmorphism/glass-card";
 const ZoneCard = () => {
   return (
-    <GlassCard className="zone-card w-[28%] absolute bottom-4 right-4 border-1 border-white rounded-lg p-6">
+    <GlassCard className="zone-card w-[28%] absolute bottom-4 right-4 border-1 border-white rounded-lg p-6 hidden md:block">
       <div className="flex gap-2 items-center my-1">
         <span className="w-fit text-nowrap">Zone 04 </span>
         <Progress size="lg" aria-label="Loading..." value={50} />

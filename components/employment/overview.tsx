@@ -6,7 +6,7 @@ import BanIcon from "../icons/banned";
 
 const Overview = () => {
   return (
-    <div className="flex items-center justify-around border border-yellow-600 p-4 rounded-lg">
+    <div className="md:flex items-center justify-around border border-yellow-600 p-4 rounded-lg md:gap-0 grid gap-3">
       <div className="flex items-start gap-3">
         <div className="bg-yellow-600 rounded-full p-3 aspect-square flex justify-center items-center">
           <WorkerIcon size="sm" />
@@ -16,7 +16,7 @@ const Overview = () => {
           <h2 className="text-xl font-semibold text-yellow-600">5423</h2>
         </div>
       </div>
-      <Divider orientation="vertical" className="h-12" />
+      <Divider orientation="vertical" className="h-12 hidden md:block" />
       <div className="flex items-start gap-3">
         <div className="bg-yellow-600 rounded-full p-3 aspect-square flex justify-center items-center">
           <CheckTimeIcon size="sm" />
@@ -29,7 +29,7 @@ const Overview = () => {
           </span>
         </div>
       </div>
-      <Divider orientation="vertical" className="h-12" />
+      <Divider orientation="vertical" className="h-12 hidden md:block" />
       <div className="flex items-start gap-3">
         <div className="bg-yellow-600 rounded-full p-3 aspect-square flex justify-center items-center">
           <BanIcon size="sm" />

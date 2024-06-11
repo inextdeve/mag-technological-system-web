@@ -243,7 +243,7 @@ export default function EquipmentTable() {
               </DropdownMenu>
             </Dropdown> */}
             <Dropdown>
-              <DropdownTrigger className="hidden sm:flex">
+              <DropdownTrigger className="flex">
                 <Button
                   endContent={<ChevronDownIcon className="text-small" />}
                   size="sm"
@@ -326,6 +326,7 @@ export default function EquipmentTable() {
 
   const classNames = React.useMemo(
     () => ({
+      base: "overflow-x-scroll",
       wrapper: ["max-h-[382px]", "max-w-3xl"],
       th: [
         "bg-transparent",

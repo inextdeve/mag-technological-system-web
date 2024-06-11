@@ -35,7 +35,7 @@ const TabsMenu = () => {
   }, [pathname]);
 
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-2 pl-4">
       {tabs?.map(({ name, link }) => (
         <Link
           key={link}

@@ -46,7 +46,7 @@ const data = [
 
 const TimeTable = () => {
   return (
-    <div className="grid grid-cols-13 p-1">
+    <div className="grid grid-cols-13 p-1 text-sm">
       {monthsShort.map((value) => (
         <div key={value}>{value}</div>
       ))}
@@ -55,12 +55,12 @@ const TimeTable = () => {
           key={`${name}-${index}`}
           className="col-span-full grid grid-cols-13 "
         >
-          <div className="py-3 text-center text-[#0AB9BF]">{name}</div>
-          <div className="col-span-12 py-3 border-b-1 border-gray-400">
-            <div className="min-h-6 dark:bg-[#0AB9BF]/30 bg-[#0AB9BF]/50 w-full rounded-r-full relative">
+          <div className="py-1 md:py-3 text-center text-[#0AB9BF]">{name}</div>
+          <div className="col-span-12 py-1 md:py-3 border-b-1 border-gray-400">
+            <div className="md:min-h-6 min-h-2 dark:bg-[#0AB9BF]/30 bg-[#0AB9BF]/50 w-full rounded-r-full relative">
               <div
                 className={cn(
-                  `absolute top-0 bottom-0 bg-gradient-to-r dark:from-[#FFFFFF] from-blue-700  dark:to-[#0AB9BF] to-[#0AB9BF] rounded-full min-h-4`,
+                  `absolute top-0 bottom-0 bg-gradient-to-r dark:from-[#FFFFFF] from-blue-700  dark:to-[#0AB9BF] to-[#0AB9BF] rounded-full md:min-h-4 min-h-1`,
                   {
                     "rounded-l-none": start === 0,
                   }

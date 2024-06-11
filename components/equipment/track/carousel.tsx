@@ -60,7 +60,7 @@ const StyledCard = ({ from, to, status, imgSrc, deviceName }: CardProps) => {
 
 const Carousel = ({ devices }: { devices: Device[] }) => {
   return (
-    <div className="flex gap-4 items-center absolute bottom-2 right-0 z-30 w-[70%] overflow-x-scroll opacity-20 hover:opacity-100 transition-opacity">
+    <div className="flex gap-4 items-center absolute bottom-2 right-0 z-30 md:w-[70%] overflow-x-scroll opacity-20 hover:opacity-100 transition-opacity">
       {Object.values(devices).map((device) => (
         <StyledCard
           key={device.id}

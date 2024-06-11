@@ -20,6 +20,11 @@ const TimeRange = ({ setFrom, setTo }: Props) => {
       <div className="flex gap-3 items-center flex-wrap">
         <div className="max-w-fit">
           <DateRangePicker
+            classNames={{
+              innerWrapper: "flex-wrap h-auto md:h-10",
+              inputWrapper: "h-auto items-start",
+              input: "w-fit",
+            }}
             defaultValue={{
               start: parseZonedDateTime("2024-04-01T00:45[Asia/Riyadh]"),
               end: parseZonedDateTime("2024-04-14T11:15[Asia/Riyadh]"),
@@ -45,10 +50,16 @@ const TimeRange = ({ setFrom, setTo }: Props) => {
           />
         </div>
         <div className="gap-3 flex">
-          <Button className="rounded-md dark:bg-white text-background">
+          <Button
+            className="rounded-md dark:bg-white text-background"
+            size="sm"
+          >
             Cancel
           </Button>
-          <Button className="rounded-md dark:text-black text-white bg-yellow-500">
+          <Button
+            className="rounded-md dark:text-black text-white bg-yellow-500"
+            size="sm"
+          >
             Apply
           </Button>
         </div>

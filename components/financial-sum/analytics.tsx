@@ -18,12 +18,12 @@ const Analytics = () => {
             <Dot className="w-12 h-12 text-[#FDC3C3]" /> Outcome
           </span>
         </div>
-        <div className="flex items-center gap-2 ml-10">
+        <div className="flex items-center gap-2 md:ml-10 ml-7">
           <Filter />
         </div>
       </CardHeader>
-      <CardBody>
-        <div className="min-h-[400px] w-full ">
+      <CardBody className="md:px-3 px-0">
+        <div className="min-h-[400px] w-full">
           <CustomBarChart />
         </div>
       </CardBody>

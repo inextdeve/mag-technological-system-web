@@ -45,7 +45,7 @@ const Processes = () => {
         </div>
       </div>
       {/* Add content here */}
-      <div className="w-[70%] px-4 min-w-300px">
+      <div className="md:w-[70%] px-4 min-w-300px">
         <h4 className="text-yellow-m">Timetable</h4>
         <TimeTable />
       </div>

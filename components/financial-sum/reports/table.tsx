@@ -72,80 +72,88 @@ export default function CollapsibleTable() {
     }
   };
   return (
-    <table className="min-w-full h-auto table-auto w-full">
-      <TableHead>
-        <TableRow>
-          <TableColumn>
-            <ArrowDown className="w-4 h-4" />
-          </TableColumn>
-          <TableColumn>Name</TableColumn>
-          <TableColumn>From</TableColumn>
-          <TableColumn>To</TableColumn>
-          <TableColumn>Total Price</TableColumn>
-          <TableColumn>Total Fines</TableColumn>
-          <TableColumn>Total Remaining</TableColumn>
-          <TableColumn>Status</TableColumn>
-          <TableColumn>Details</TableColumn>
-        </TableRow>
-      </TableHead>
-      {data.map((item, index) => (
-        <tbody key={index}>
-          <TableRow
-            key={index}
-            onClick={() => handleExpandRow(index)}
-            className={cn("hover:cursor-pointer")}
-          >
-            <TableData>
-              <ChevronRight
-                className={cn("w-4 h-4 transition-transform", {
-                  "rotate-90": expandedRows.includes(index as never),
-                })}
-              />
-            </TableData>
-            <TableData>{item.name}</TableData>
-            <TableData>{item.from}</TableData>
-            <TableData>{item.to}</TableData>
-            <TableData className="text-[#F29701]">{item.totalPrice}</TableData>
-            <TableData className="text-[#D0004B]">{item.totalFines}</TableData>
-            <TableData className="text-[#0AB9BF]">
-              {item.totalRemaining}
-            </TableData>
-            <TableData>
-              <Chip
-                color={`${item.status === "completed" ? "success" : "danger"}`}
-                size="md"
-                className={cn(
-                  "text-yellow-m bg-x-light-yellow-m min-w-[60%] text-center",
-                  {
-                    "text-green-m bg-x-light-green-m":
-                      item.status.toLowerCase() === "completed",
-                  }
-                )}
-              >
-                {item.status}
-              </Chip>
-            </TableData>
-            <TableData>
-              <Button
-                size="sm"
-                className="bg-[#0AB9BF55] border-white border-2"
-              >
-                Details
-              </Button>
-            </TableData>
+    <div className="overflow-x-scroll">
+      <table className="min-w-full h-auto table-auto w-full">
+        <TableHead>
+          <TableRow>
+            <TableColumn>
+              <ArrowDown className="w-4 h-4" />
+            </TableColumn>
+            <TableColumn>Name</TableColumn>
+            <TableColumn>From</TableColumn>
+            <TableColumn>To</TableColumn>
+            <TableColumn>Total Price</TableColumn>
+            <TableColumn>Total Fines</TableColumn>
+            <TableColumn>Total Remaining</TableColumn>
+            <TableColumn>Status</TableColumn>
+            <TableColumn>Details</TableColumn>
           </TableRow>
-          {expandedRows.includes(index as never) ? (
-            <TableRow className="opacity-0 translate-y-[-10px] animate-fadein">
-              <TableData colSpan={9} className="collaps-viewer">
-                <div className="bg-[#0AB9BF55] rounded-lg flex gap-16 p-4">
-                  <CustomSlider />
-                  <CustomSlider variant="exchange" />
-                </div>
+        </TableHead>
+        {data.map((item, index) => (
+          <tbody key={index}>
+            <TableRow
+              key={index}
+              onClick={() => handleExpandRow(index)}
+              className={cn("hover:cursor-pointer")}
+            >
+              <TableData>
+                <ChevronRight
+                  className={cn("w-4 h-4 transition-transform", {
+                    "rotate-90": expandedRows.includes(index as never),
+                  })}
+                />
+              </TableData>
+              <TableData>{item.name}</TableData>
+              <TableData>{item.from}</TableData>
+              <TableData>{item.to}</TableData>
+              <TableData className="text-[#F29701]">
+                {item.totalPrice}
+              </TableData>
+              <TableData className="text-[#D0004B]">
+                {item.totalFines}
+              </TableData>
+              <TableData className="text-[#0AB9BF]">
+                {item.totalRemaining}
+              </TableData>
+              <TableData>
+                <Chip
+                  color={`${
+                    item.status === "completed" ? "success" : "danger"
+                  }`}
+                  size="md"
+                  className={cn(
+                    "text-yellow-m bg-x-light-yellow-m min-w-[60%] text-center",
+                    {
+                      "text-green-m bg-x-light-green-m":
+                        item.status.toLowerCase() === "completed",
+                    }
+                  )}
+                >
+                  {item.status}
+                </Chip>
+              </TableData>
+              <TableData>
+                <Button
+                  size="sm"
+                  className="bg-[#0AB9BF55] border-white border-2"
+                >
+                  Details
+                </Button>
               </TableData>
             </TableRow>
-          ) : null}
-        </tbody>
-      ))}
-    </table>
+            {expandedRows.includes(index as never) ? (
+              <TableRow className="opacity-0 translate-y-[-10px] animate-fadein">
+                <TableData colSpan={9} className="collaps-viewer">
+                  <div className="bg-[#0AB9BF55] rounded-lg flex gap-16 p-4">
+                    <CustomSlider />
+                    <CustomSlider variant="exchange" />
+                  </div>
+                </TableData>
+              </TableRow>
+            ) : null}
+          </tbody>
+        ))}
+      </table>
+    </div>
   );
 }
