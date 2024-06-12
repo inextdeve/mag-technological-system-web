@@ -209,7 +209,7 @@ export default function ReportsTable() {
               </DropdownMenu>
             </Dropdown> */}
             <Dropdown>
-              <DropdownTrigger className="flex flex-1">
+              <DropdownTrigger className="flex flex-1 md:flex-initial">
                 <Button
                   endContent={<ChevronDownIcon className="text-small" />}
                   size="sm"
@@ -296,7 +296,7 @@ export default function ReportsTable() {
 
   const classNames = React.useMemo(
     () => ({
-      base: "overflow-x-scroll",
+      base: "md:overflow-auto overflow-x-scroll",
       wrapper: ["max-h-[382px]", "max-w-3xl"],
       th: [
         "bg-transparent",
@@ -325,7 +325,7 @@ export default function ReportsTable() {
       <Table
         isCompact
         removeWrapper
-        aria-label="Example table with custom cells, pagination and sorting"
+        aria-label="Reports table with custom cells, pagination and sorting"
         bottomContent={bottomContent}
         bottomContentPlacement="outside"
         // checkboxesProps={{

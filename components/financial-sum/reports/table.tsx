@@ -72,7 +72,7 @@ export default function CollapsibleTable() {
     }
   };
   return (
-    <div className="overflow-x-scroll">
+    <div className="md:overflow-auto overflow-x-scroll">
       <table className="min-w-full h-auto table-auto w-full">
         <TableHead>
           <TableRow>

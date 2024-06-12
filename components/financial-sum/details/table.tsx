@@ -305,7 +305,7 @@ export default function ReportsTable() {
 
   const classNames = React.useMemo(
     () => ({
-      base: "overflow-x-scroll",
+      base: "md:overflow-auto overflow-x-scroll",
       wrapper: ["max-h-[382px]", "max-w-3xl"],
       th: [
         "bg-transparent",
